@@ -1,0 +1,49 @@
+<?php use App\Framework\FlashBag;?>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+    <base href="<?=SITE_BASE_URL;?>">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?=$pageTitle??'';?></title>
+    <link rel="stylesheet" href="<?=asset('css/style.css');?>">
+    
+</head>
+    <body class="body">
+
+        <?php require TEMPLATE_DIR . '/_partials/header.phtml';?>
+
+        <main class="main">
+
+            <aside class="">
+                <?php if (FlashBag::hasMessages('error')):?>
+                    <?php foreach (FlashBag::fetchMessages('error') as $error):?>
+                        <p class=""><?=$error;?></p>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+
+                <?php if (FlashBag::hasMessages('success')):?>
+                    <?php foreach (FlashBag::fetchMessages('success') as $message):?>
+                        <p class="Message Success-message"><?=$message;?></p>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+
+                <?php if (FlashBag::hasMessages('query')):?>
+                    <?php foreach (FlashBag::fetchMessages('query') as $message):?>
+                        <p class=""><?=$message;?></p>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+            </aside>
+
+            <?php require TEMPLATE_DIR . '/' . $template . '.phtml'; ?>
+        
+        </main>
+
+        <?php require TEMPLATE_DIR . '/_partials/footer.phtml';?>
+
+        <script src="<?=asset('js/app.js');?>"></script>
+    </body>
+</html>
