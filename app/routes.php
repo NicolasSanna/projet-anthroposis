@@ -6,7 +6,7 @@
 $routes = [
 
     // Route de la page d'accueil
-    'homepage' => [
+    'home' => [
         'path' => '/',
         'controller' => 'HomeController',
         'method' => 'index'
