@@ -52,13 +52,16 @@
             cursor:pointer;
         }
 
+        // MENU
+
         &-menu
         {
             background-color:white;
             transform:translateX(-200%);
             position:fixed;
-            width:102%;
-            height:100%;
+            margin-top: -10px;
+            width:90%;   
+            height:100%;     
 
             &-cross
             {
@@ -68,6 +71,7 @@
                 display:block;
                 text-align: right;
                 cursor: pointer;
+                margin-top:10px;
             }
 
             &-list
@@ -76,6 +80,7 @@
                 flex-direction: column;
                 align-items: center;
                 list-style: none;
+                justify-content: space-around;
 
                 &-item
                 {
@@ -83,6 +88,7 @@
                     {
                         display:block;
                         text-decoration:none;
+                        color:black;
                     }
                 }
             }
@@ -98,7 +104,7 @@
 
 .active
 {
-    transform:translateX(-85%);
+    transform:translateX(-100%);
     transition-duration:1s;
 }
 
@@ -135,5 +141,59 @@
             font-family: 'Baskerville';
             font-size: 16px;
         }
+    }
+}
+
+@media screen AND (min-width: 1100px)
+{
+    .Header
+    {
+        align-items: center;
+
+        &-h1
+        {
+            margin-left:5%;
+            margin-right:5%;
+        }
+
+        &-img
+        {
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+
+        &-Navbar
+        {
+            width:100%;
+
+            &-burger
+            {
+                display:none;
+            }
+
+            &-menu
+            {
+                position:relative;
+                transform:translateX(0%);
+
+                &-list
+                {
+                    flex-direction: row;
+                    margin-bottom:5px;
+                }
+                
+                &-cross
+                {
+                    display:none;
+                }
+            }
+        }
+    }
+
+    .content
+    {
+        margin-left:5%;
+        margin-right:5%;
+        text-align: justify;
     }
 }
