@@ -2,31 +2,27 @@
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'TODO';
 
 -- On supprime l'utilisateur que l'on veut créer par sécurité.
-DROP USER ''@'localhost';
+DROP USER IF EXISTS '4dm1n'@'localhost';
 
 -- On créé l'utilisateur et on lui donne le vrai mot de passe. Ici, on ne l'indique pas, on met à la place un TODO.
-CREATE USER ''@'localhost' IDENTIFIED BY 'TODO';
+CREATE USER '4dm1n'@'localhost' IDENTIFIED BY 'TODO';
 
 -- Phase de développement : On donne les privilèges nécessaires DDL et DML pendant la phase de création.
-REVOKE ALL PRIVILEGES
-ON .*
-FROM ''@'localhost';
-
 GRANT ALL PRIVILEGES
-ON .*
-TO ''@'localhost';
+ON anthroposis.*
+TO '4dm1n'@'localhost';
 
 FLUSH PRIVILEGES ;
 
 -- Après : Une fois la phase de développée terminée pour mise en production, on retire tous les privilèges sauf ceux nécessaires à l'utilisateur connecté à la base de données. 
 REVOKE ALL PRIVILEGES
-ON .*
-FROM ''@'localhost';
+ON anthroposis.*
+FROM '4dm1n'@'localhost';
 
 FLUSH PRIVILEGES ;
 
 GRANT SELECT, INSERT, UPDATE, DELETE, EXECUTE
-ON .*
-TO ''@'localhost';
+ON anthroposis.*
+TO '4dm1n'@'localhost';
 
 FLUSH PRIVILEGES ;

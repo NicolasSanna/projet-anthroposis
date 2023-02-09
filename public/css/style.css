@@ -69,7 +69,7 @@
   align-items: center;
   list-style: none;
   justify-content: space-between;
-  margin-left: 10%;
+  margin-left: 5%;
 }
 .Header-Navbar-menu-list-item-link {
   display: block;
@@ -150,7 +150,6 @@
   }
   .Header-img {
     margin-left: 5%;
-    margin-right: 5%;
   }
   .Header-Navbar {
     width: 100%;
