@@ -1,7 +1,0 @@
-////////////
-// NOTES //
-//////////
-
-Pour lancer le serveur interne de PHP :
-> php -S localhost:8000 -t public
-
