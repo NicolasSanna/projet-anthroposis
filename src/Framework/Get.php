@@ -16,7 +16,6 @@ class Get
         {
             $url = buildUrl('404');
 
-            // La redirection qui se fait avec la fonction header('Location:) est concaténée à la variable $url. Et l'on sort. 
             header('Location: ' . $url);
             exit;
         }
@@ -34,7 +33,6 @@ class Get
         // Si une clé existe dans l'URL, et que cette clé est déclarée dans l'URL.
         if (!array_key_exists(self::$key, self::$get) || !self::$get[self::$key])
         {
-            // La fonction ifExistsRedirectTo se sert de la fonction buildUrl et des paramètres reçus (données). 
             $url = buildUrl('404');
 
             // La redirection qui se fait avec la fonction header('Location:) est concaténée à la variable $url. Et l'on sort. 
@@ -49,7 +47,6 @@ class Get
 
         if(empty(self::$get[self::$key]) || str_contains(self::$get[self::$key], '<script>'))
         {
-            // La fonction ifExistsRedirectTo se sert de la fonction buildUrl et des paramètres reçus (données). 
             $url = buildUrl('404');
 
             // La redirection qui se fait avec la fonction header('Location:) est concaténée à la variable $url. Et l'on sort. 

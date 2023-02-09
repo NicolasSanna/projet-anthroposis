@@ -47,13 +47,12 @@ class Database
     {
         // Dans le DSN (Data Source Name), on indique les différents paramètres de la connexion à la base de données. On se set des constantes du config.php afin de donner les paramètres :
         /**
-         * - Le SGBDR :(Système de Gestion de Base de Données Relationnelles) ou DB_MS (DataBase Management System). Ici MySQL.
+         * - Le SGBDR :(Système de Gestion de Base de Données Relationnelles) ou DB_MS (DataBase Management System).
          * - L'hôte : le serveur sur lequel se connecter. Ici le LocalHost.
          * - Le port : celui par lequel MySQL peut se connecter au serveur. Ici, le 3306.
          * - Le nom de la base de données à sa création.
-         * - Le jeu de caractères. A préciser sinon les données ne s'afficheront pas correctement et notamment les caractères spéciaux : &éèà@ù...
+         * - Le jeu de caractères. À préciser sinon les données ne s'afficheront pas correctement et notamment les caractères spéciaux : &éèà@ù...
          */
-
         $dsn = ''.DB_MS.':host='.DB_HOST.';port='.DB_PORT.';dbname='.DB_NAME.';charset='.DB_CHARSET.'';
 
         // On met dans la variable $pdo les différents paramètres nécessaires en plus du DSN :
@@ -63,7 +62,6 @@ class Database
          * - PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION : Lance une PDO EXCEPTION si une erreur se produit.
          * - PDO::ATTR_EMULATE_PREPARES => false : On n'émule pas les requêtes à partir de MySQL.
          */
-
         $options = [
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ,
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,

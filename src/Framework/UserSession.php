@@ -11,7 +11,7 @@ class UserSession extends AbstractSession
     /**
      * Enregistre les informations de l'utilisateur en session venant du formulaire de connexion et avec les informations relatives venant de la base de données.
      */
-    public static function register(int $userId, string $firstname, string $lastname, string $pseudo, string $email, int $grant_id, string $grant_label): void
+    public static function register(int $userId, string $firstname, string $lastname, string $pseudo, string $email, string $role_label, int $role_id, ): void
     {
 
         // On s'assure que la session est bien démarrée en appelant la méthode sessionCheck(). C'est une méthode statique héritée de l'AbstractSession : pas besoin d'instancier le constructeur parent.
@@ -24,13 +24,12 @@ class UserSession extends AbstractSession
             'lastname' => $lastname,
             'pseudo' => $pseudo,
             'email' => $email,
-            'grant_id' => $grant_id,
-            'grant_label' => $grant_label
+            'role_label' => $role_label,
+            'role_id' => $role_id,
         ];
 
         // On appelle la méthode privée token afin de générer le token aléatoire lors de la connexion de l'utilisateur.
         self::token();
-
     }
 
     /**
