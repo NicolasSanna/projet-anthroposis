@@ -69,7 +69,6 @@
   align-items: center;
   list-style: none;
   justify-content: space-between;
-  margin-left: 5%;
 }
 .Header-Navbar-menu-list-item-link {
   display: block;
@@ -96,12 +95,6 @@
   transition-duration: 1s;
 }
 
-.content {
-  margin-left: 5%;
-  margin-right: 5%;
-  text-align: justify;
-}
-
 .Home {
   background-image: url("../img/zaini-izzuddin-55btQzyDiO8-unsplash.jpg");
   width: 100%;
@@ -114,6 +107,11 @@
   background-attachment: fixed;
   animation: fadeInFromNone 1s ease-out;
 }
+.Home-content {
+  margin-left: 5%;
+  margin-right: 5%;
+  text-align: justify;
+}
 .Home-component {
   background-color: white;
   padding-left: 40px;
@@ -125,6 +123,17 @@
   font-family: "Baskerville";
   font-size: 16px;
   text-align: center;
+}
+
+.Signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Signup-title {
+  font-family: "Baskerville";
+  font-weight: lighter;
+  font-size: 20px;
 }
 
 .Footer {
@@ -144,6 +153,7 @@
   .Header-h1 {
     margin-left: 5%;
     margin-right: 5%;
+    margin-bottom: 25px;
   }
   .Header-h1-link {
     font-size: 24px;
@@ -163,7 +173,6 @@
   }
   .Header-Navbar-menu-list {
     flex-direction: row;
-    margin-bottom: 5px;
   }
   .Header-Navbar-menu-cross {
     display: none;

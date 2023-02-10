@@ -12,6 +12,12 @@ $routes = [
         'method' => 'index'
     ],
 
+    'signup' => [
+        'path' => '/inscription',
+        'controller' => 'Account\\AccountController',
+        'method' => 'signup'
+    ],
+
     '404' => [
         'path' => '/404',
         'controller' => 'HomeController',

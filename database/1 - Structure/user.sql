@@ -14,7 +14,7 @@ TO '4dm1n'@'localhost';
 
 FLUSH PRIVILEGES ;
 
--- Après : Une fois la phase de développée terminée pour mise en production, on retire tous les privilèges sauf ceux nécessaires à l'utilisateur connecté à la base de données. 
+-- Après : Une fois la phase de développement terminée pour mise en production, on retire tous les privilèges sauf ceux nécessaires à l'utilisateur connecté à la base de données. 
 REVOKE ALL PRIVILEGES
 ON anthroposis.*
 FROM '4dm1n'@'localhost';

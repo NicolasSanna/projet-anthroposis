@@ -94,7 +94,6 @@
                 align-items: center;
                 list-style: none;
                 justify-content: space-between;
-                margin-left:5%;
 
                 &-item
                 {
@@ -134,14 +133,6 @@
     transition-duration:1s;
 }
 
-
-.content
-{
-    margin-left:5%;
-    margin-right:5%;
-    text-align: justify;
-}
-
 // HOME
 
 .Home
@@ -157,6 +148,13 @@
     background-attachment: fixed;
     animation: fadeInFromNone 1s ease-out;
 
+    &-content
+    {
+        margin-left:5%;
+        margin-right:5%;
+        text-align: justify;
+    }
+
     &-component
     {
         background-color:white;
@@ -171,6 +169,22 @@
             font-size: 16px;
             text-align: center;
         }
+    }
+}
+
+// SIGNUP
+
+.Signup
+{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    
+    &-title
+    {
+        font-family: 'Baskerville';
+        font-weight: lighter;
+        font-size: 20px;
     }
 }
 
@@ -195,6 +209,7 @@
         {
             margin-left:5%;
             margin-right:5%;
+            margin-bottom:25px;
 
             &-link
             {
@@ -224,7 +239,6 @@
                 &-list
                 {
                     flex-direction: row;
-                    margin-bottom:5px;
                 }
                 
                 &-cross
