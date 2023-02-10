@@ -27,15 +27,12 @@
     &-img
     {
         width: 70px;
-
     }
 
     &-h1
     {
         margin-top:auto;
         margin-bottom: 30px;
-        margin-left:15px;
-        margin-right:15px;
 
         &-link
         {
@@ -185,6 +182,68 @@
         font-family: 'Baskerville';
         font-weight: lighter;
         font-size: 20px;
+    }
+
+    &-form
+    {
+        width:60%;
+        margin:20px 0px;
+
+        &-component
+        {
+            display:flex;
+            flex-direction: row;
+            &-input
+            {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                box-sizing: border-box;
+                border: 3px solid #ccc;
+                transition: 0.5s;
+                outline: none;
+
+                &:focus
+                {
+                    border: 3px solid #917237;
+                }
+            }
+            &-button
+            {
+                background-color: #917237;
+                color: white;
+                text-decoration: none;
+                cursor: pointer;
+                transition: 0.5s;
+                border:3px solid #917237;
+                padding: 12px 20px;
+                margin: 8px 0;
+    
+                &:hover
+                {
+                    background-color: white;
+                    color:#917237;
+                }
+            }
+        }
+
+        &-button
+        {
+            background-color: #917237;
+            border: none;
+            color: white;
+            padding: 12px 32px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: 0.5s;
+            border:3px solid #917237;
+
+            &:hover
+            {
+                background-color: white;
+                color:#917237;
+            }
+        }
     }
 }
 

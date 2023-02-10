@@ -1,9 +1,27 @@
 <div class="Signup">
     <h2 class="Signup-title">Inscription</h2>
     <form action="<?=buildUrl('signup');?>" method="post" class="Signup-form">
-
-        <div>
-            <input type="text" name="firstname" value="" placeholder="Nom">
+        <div class="Signup-form-component">
+            <input class="Signup-form-component-input" type="text" name="lastname" value="" placeholder="Nom" required>
         </div>
+        <div class="Signup-form-component">
+            <input class="Signup-form-component-input" type="text" name="firstname" value="" placeholder="Prénom" required>
+        </div>
+        <div class="Signup-form-component">
+            <input class="Signup-form-component-input" type="text" name="pseudo" value="" placeholder="Pseudo" required>
+        </div>
+        <div class="Signup-form-component">
+            <input class="Signup-form-component-input" type="email" name="email" value="" placeholder="E-mail" required>
+        </div>
+        <div class="Signup-form-component">
+            <input class="Signup-form-component-input" type="password" id="inputPassword" name="password" value="" placeholder="Mot de passe" required>
+            <input type="button" class="Signup-form-component-button" id="showPassword" value="Voir">
+        </div>
+        <div class="Signup-form-component">
+            <input class="Signup-form-component-input" type="password" name="confirmPassword" value="" placeholder="Confirmer" required>
+        </div>
+        <input type="submit" class="Signup-form-button" value="S'inscrire">
     </form>
 </div>
+
+<script src="<?=asset('js/signup/PasswordManager.js');?>"></script>
