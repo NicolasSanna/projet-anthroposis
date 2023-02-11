@@ -46,4 +46,21 @@ class UserModel extends AbstractModel
 
         return $result;
     }
+
+    public function checkCredentials(string $email, string $password): mixed
+    {
+        $user = $this->getOneByEmail($email);
+
+        if(!$user)
+        {
+            return false;
+        }
+
+        if(!password_verify($password, $user->password))
+        {
+            return false;
+        }
+
+        return $user;
+    }
 }

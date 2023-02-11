@@ -18,6 +18,18 @@ $routes = [
         'method' => 'signup'
     ],
 
+    'dashboard' => [
+        'path' => '/admin/administration',
+        'controller' => 'Admin\\AdminController',
+        'method' => 'dashboard'
+    ],
+
+    'articles' => [
+        'path' => '/admin/articles',
+        'controller' => 'Admin\\AdminController',
+        'method' => 'articles'
+    ],
+
     '404' => [
         'path' => '/404',
         'controller' => 'HomeController',

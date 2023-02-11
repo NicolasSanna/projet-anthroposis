@@ -38,4 +38,19 @@ abstract class AbstractController
         header('Location: ' . $url);
         exit;
     }
+
+    protected function renderAdmin(string $template, array $data = []): string
+    {
+        // On extrait les données.
+        extract($data);
+    
+        // On démarre le tampon de sortie. 
+        ob_start();
+    
+        // On inclue le base.phtml à partir de la constante TEMPLATE_DIR, le base.phtml recevra le template à afficher.
+        require TEMPLATE_DIR . '/admin/baseAdmin.phtml';
+    
+        // On vide le tampon de sortie.
+        return ob_get_clean();
+    }
 }
