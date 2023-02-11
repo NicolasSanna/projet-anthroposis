@@ -137,7 +137,6 @@
     text-align: center;
     color: white;
     padding: 12px 0px;
-
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -152,6 +151,22 @@
     &-message
     {
         background-color: #db3535;
+    }
+}
+
+.Success
+{
+    &-message
+    {
+        background-color: #006800;
+    }
+}
+
+.Query
+{
+    &-message
+    {
+        background-color:#917237;
     }
 }
 

@@ -111,6 +111,14 @@
   background-color: #db3535;
 }
 
+.Success-message {
+  background-color: #006800;
+}
+
+.Query-message {
+  background-color: #917237;
+}
+
 .Home {
   background-image: url("../img/zaini-izzuddin-55btQzyDiO8-unsplash.jpg");
   width: 100%;

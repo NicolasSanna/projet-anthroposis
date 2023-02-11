@@ -10,8 +10,8 @@ class PasswordManager
 
     onClickShowPassord()
     {
-        this.inputPassword.type = this.inputPassword.type === 'password' ? this.inputPassword.type = 'text' : 'password';
-        this.button.value = this.button.value === 'Voir' ? this.button.value = 'Cacher' : 'Voir';
+        this.inputPassword.type = this.inputPassword.type === 'password' ? 'text' : 'password';
+        this.button.value = this.button.value === 'Voir' ? 'Cacher' : 'Voir';
     }
 }
 

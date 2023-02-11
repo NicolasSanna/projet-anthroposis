@@ -2,23 +2,23 @@
     <h2 class="Signup-title">Inscription</h2>
     <form action="<?=buildUrl('signup');?>" method="post" class="Signup-form">
         <div class="Signup-form-component">
-            <input class="Signup-form-component-input" type="text" name="lastname" value="" placeholder="Nom" required>
+            <input class="Signup-form-component-input" type="text" name="lastname" value="<?=$lastname;?>" placeholder="Nom" maxlength="50" required>
         </div>
         <div class="Signup-form-component">
-            <input class="Signup-form-component-input" type="text" name="firstname" value="" placeholder="Prénom" required>
+            <input class="Signup-form-component-input" type="text" name="firstname" value="<?=$firstname;?>" placeholder="Prénom" maxlength="50" required>
         </div>
         <div class="Signup-form-component">
-            <input class="Signup-form-component-input" type="text" name="pseudo" value="" placeholder="Pseudo" required>
+            <input class="Signup-form-component-input" type="text" name="pseudo" value="<?=$pseudo;?>" placeholder="Pseudo" maxlength="50"required>
         </div>
         <div class="Signup-form-component">
-            <input class="Signup-form-component-input" type="email" name="email" value="" placeholder="E-mail" required>
+            <input class="Signup-form-component-input" type="email" name="email" value="<?=$email;?>" placeholder="E-mail" maxlength="50" required>
         </div>
         <div class="Signup-form-component">
-            <input class="Signup-form-component-input" type="password" id="inputPassword" name="password" value="" placeholder="Mot de passe" required>
+            <input class="Signup-form-component-input" type="password" id="inputPassword" name="password" value="" placeholder="Mot de passe" maxlength="50" required>
             <input type="button" class="Signup-form-component-button" id="showPassword" value="Voir">
         </div>
         <div class="Signup-form-component">
-            <input class="Signup-form-component-input" type="password" name="confirmPassword" value="" placeholder="Confirmer" required>
+            <input class="Signup-form-component-input" type="password" name="confirmPassword" value="" placeholder="Confirmer" maxlength="50" required>
         </div>
         <input type="submit" class="Signup-form-button" value="S'inscrire">
     </form>
