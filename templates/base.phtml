@@ -22,21 +22,21 @@
             <aside class="">
                 <?php if (FlashBag::hasMessages('error')):?>
                     <?php foreach (FlashBag::fetchMessages('error') as $error):?>
-                        <p class=""><?=$error;?></p>
-                    <?php endforeach; ?>
-                <?php endif; ?>
+                        <p class="Message Error-message"><?=$error;?></p>
+                    <?php endforeach;?>
+                <?php endif;?>
 
                 <?php if (FlashBag::hasMessages('success')):?>
                     <?php foreach (FlashBag::fetchMessages('success') as $message):?>
                         <p class="Message Success-message"><?=$message;?></p>
-                    <?php endforeach; ?>
-                <?php endif; ?>
+                    <?php endforeach;?>
+                <?php endif;?>
 
                 <?php if (FlashBag::hasMessages('query')):?>
                     <?php foreach (FlashBag::fetchMessages('query') as $message):?>
-                        <p class=""><?=$message;?></p>
-                    <?php endforeach; ?>
-                <?php endif; ?>
+                        <p class="Message Query-message"><?=$message;?></p>
+                    <?php endforeach;?>
+                <?php endif;?>
             </aside>
 
             <?php require TEMPLATE_DIR . '/' . $template . '.phtml'; ?>
