@@ -29,4 +29,25 @@ class ArticleModel extends AbstractModel
             'statusId' => self::STATUS_NOT_APPROVED
         ]);
     }
+
+    public function findAllByUser(int $userId): mixed
+    {
+        $sql = 'CALL SP_ArticleUserAllSelect(:userId)';
+
+        $results = $this->database->getAllResults($sql, [
+            'userId' => $userId
+        ]);
+
+        return $results;
+    }
+
+    public function delete (int $userId, string $articleSlug): void
+    {
+        $sql = 'CALL SP_ArticleDelete(:userId, :articleSlug)';
+
+        $this->database->executeQuery($sql, [
+            'userId' => $userId,
+            'articleSlug' => $articleSlug
+        ]);
+    }
 }

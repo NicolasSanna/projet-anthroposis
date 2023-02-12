@@ -1,0 +1,56 @@
+table
+{
+    border-collapse: collapse;
+    margin-left:auto;
+    margin-right:auto;
+    margin:10px 10px;
+    border:1px solid #917237;
+}
+
+td
+{
+    padding:10px 10px;
+}
+
+tbody tr:nth-child(even) 
+{
+    background-color: #ccc;
+}
+
+table thead tr 
+{
+    background-color: #917237;
+    color:white;
+}
+
+table thead th
+{
+    padding:10px 10px;
+}
+
+@media screen AND (max-width: 1100px)
+{
+    td
+    { 
+        display:flex;
+        flex-direction:column;
+        align-items: center;
+    }
+    table
+    {
+        width:fit-content;
+        margin-left:auto;
+        margin-right: auto;
+    }
+    thead tr
+    {
+        display:flex;
+        flex-direction:column;
+    }
+    table thead tr 
+    {
+        height: fit-content;
+        padding-top:5px;
+        padding-bottom:5px;
+    }
+}

@@ -44,8 +44,14 @@ $routes = [
 
     'articles' => [
         'path' => '/admin/articles',
-        'controller' => 'Admin\\AdminController',
+        'controller' => 'Admin\\Article\\ArticleController',
         'method' => 'articles'
+    ],
+
+    'delete-article' => [
+        'path' => '/api/delete-article',
+        'controller' => 'API\\ArticleController',
+        'method' => 'delete'
     ],
 
     '404' => [

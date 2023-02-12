@@ -51,7 +51,7 @@
   transform: translateX(-200%);
   position: fixed;
   margin-top: -10px;
-  width: 90%;
+  width: 86%;
   height: 100%;
 }
 .Header-Navbar-menu-cross {
@@ -138,6 +138,9 @@
   transition-duration: 1s;
 }
 
+.articleAdmin {
+  text-align: center;
+}
 .articleAdmin-title {
   text-align: center;
 }
@@ -147,6 +150,14 @@
 }
 .articleAdmin-boxImg-img {
   width: 300px;
+}
+.articleAdmin-delete {
+  color: #db3535;
+  text-decoration: none;
+}
+.articleAdmin-modify {
+  text-decoration: none;
+  color: #917237;
 }
 
 .Message {

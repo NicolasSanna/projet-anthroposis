@@ -14,13 +14,4 @@ class AdminController extends AbstractController
             'pageTitle' => $pageTitle
         ]);
     }
-
-    public function articles(): string
-    {
-        $pageTitle = 'Administration';
-
-        return $this->renderAdmin('admin/articles', [
-            'pageTitle' => $pageTitle
-        ]);
-    }
 }

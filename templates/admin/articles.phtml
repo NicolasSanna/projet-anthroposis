@@ -1,19 +1,30 @@
+<div class="articleAdmin">
+    <h2 class="articleAdmin-title">Mes articles</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Date de création</th>
+                <th>Catégorie</th>
+                <th>Statut</th>
+                <th colspan="2">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($articles as $article):?>
+                <tr id="article-<?=$article->slug;?>">
+                    <td><?=$article->title;?></td>
+                    <td><?=$article->description;?></td>
+                    <td><?=$article->date_fr;?></td>
+                    <td><?=$article->category_name;?></td>
+                    <td><?=$article->status_label;?></td>
+                    <td><a class="articleAdmin-modify" href="">Modifier</a></td>
+                    <td><a class="articleAdmin-delete" href="<?=buildUrl('delete-article', ['article' => $article->slug, 'token' => $token]);?>">Supprimer</a></td>
+                </tr>
+            <?php endforeach;?>
+        </tbody>
+    </table>
+</div>
 
-
-    <h3>Mes articles</h3>
-    <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor dolorem quia magnam inventore nam repellendus necessitatibus porro error, maxime ullam eos quaerat quidem, tempora facere, labore eaque omnis ratione sequi.
-    Error voluptates ad omnis voluptas beatae, voluptatem, labore animi accusantium libero consequuntur quaerat fuga officia fugit itaque unde excepturi reprehenderit nemo commodi temporibus amet a totam? Asperiores obcaecati voluptatem repellat?
-    Recusandae eaque corporis, aliquid vitae delectus tempora deleniti earum voluptatum, aperiam iure necessitatibus odit laboriosam sunt officia itaque, consectetur sequi! Possimus adipisci blanditiis, quos quas placeat quo alias facilis ex.
-    Corporis at aut, eveniet repudiandae explicabo, omnis doloremque asperiores voluptatem hic fuga possimus amet expedita sapiente consectetur velit atque accusamus officia culpa labore dignissimos quibusdam quidem minima. Vel, a? Vel?
-    Eum cupiditate facilis assumenda odio iure, corporis nisi nostrum molestias reprehenderit praesentium. Reprehenderit excepturi nesciunt aliquam nulla unde illo eos voluptatibus consequuntur iure! Consequuntur amet similique quae alias soluta libero.
-    Assumenda perspiciatis, eligendi aspernatur cumque quas saepe nesciunt laborum aut accusantium quaerat ab praesentium voluptatem rem velit veniam aliquam, libero cupiditate quibusdam atque! Quam facilis veritatis, ipsum obcaecati culpa perspiciatis?
-    Eveniet cum vel et temporibus dolorum repudiandae necessitatibus totam tempore iusto soluta, repellendus sequi at eum consectetur magni deserunt optio earum nemo explicabo dicta. Quibusdam dolores quia obcaecati iure consequatur?
-    Quidem placeat recusandae ut nulla odit aliquam possimus cupiditate quibusdam, expedita ab rem laborum mollitia qui laboriosam? Doloremque pariatur quae tempora culpa fugit dolor quidem molestiae consequuntur laborum, illum voluptas!
-    Ea facere esse doloribus. Delectus quae doloribus fugit non laudantium in iusto voluptas minima sequi, ratione eligendi, praesentium voluptate quos veritatis. Deleniti ipsum dicta illo obcaecati ea laboriosam omnis cupiditate!
-    Eius quo aspernatur qui necessitatibus optio sint, minus, fugiat culpa unde voluptate veniam? Ullam ut quae, exercitationem eaque optio rem hic odio reprehenderit, aperiam, rerum necessitatibus laborum natus sit. Impedit.
-    </p>
-
-
-
-
+<script src="<?=asset('js/article/DeleteArticleManager.js');?>"></script>

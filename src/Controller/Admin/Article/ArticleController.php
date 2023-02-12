@@ -70,4 +70,21 @@ class ArticleController extends AbstractController
             'token' => $token
         ]);
     }
+
+    public function articles(): string
+    {
+        $pageTitle = 'Mes articles';
+
+        $userId = UserSession::getId();
+        $token = UserSession::token();
+
+        $articleModel = new ArticleModel();
+        $articles = $articleModel->findAllByUser($userId);
+
+        return $this->renderAdmin('admin/articles', [
+            'pageTitle' => $pageTitle,
+            'articles' => $articles,
+            'token' => $token
+        ]);
+    }
 }
