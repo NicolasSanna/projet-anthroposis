@@ -1,3 +1,5 @@
+<?php use App\Framework\UserSession;?>
+
 <nav class="Header-Navbar">
     <div class="Header-Navbar-menu">
         <span class="Header-Navbar-menu-cross" id="cross">✖</span>
@@ -6,14 +8,30 @@
                 <a class="Header-Navbar-menu-list-item-link" href="">À propos</a>
             </li>
             <li class="Header-Navbar-menu-list-item">
-                <a class="Header-Navbar-menu-list-item-link" href="<?=buildUrl('dashboard');?>">Administration</a>
+                <a class="Header-Navbar-menu-list-item-link" href="">Rechercher</a>
             </li>
-            <li class="Header-Navbar-menu-list-item">
-                <a class="Header-Navbar-menu-list-item-link" href="">Connexion</a>
-            </li>
-            <li class="Header-Navbar-menu-list-item">
-                <a class="Header-Navbar-menu-list-item-link" href="<?=buildUrl('signup');?>">Inscription</a>
-            </li>
+            <?php if(UserSession::isAuthenticated()):?>
+
+                <li class="Header-Navbar-menu-list-item">
+                    <a class="Header-Navbar-menu-list-item-link" href="<?=buildUrl('dashboard');?>">Administration</a>
+                </li>
+                <li class="Header-Navbar-menu-list-item">
+                    <a class="Header-Navbar-menu-list-item-link" href="<?=buildUrl('dashboard');?>">Bonjour <?=UserSession::getFullname();?></a>
+                </li>
+                <li class="Header-Navbar-menu-list-item">
+                    <a class="Header-Navbar-menu-list-item-link" href="<?=buildUrl('logout');?>">Déconnexion</a>
+                </li>
+
+            <?php else:?>
+
+                <li class="Header-Navbar-menu-list-item">
+                    <a class="Header-Navbar-menu-list-item-link" href="<?=buildUrl('login');?>">Connexion</a>
+                </li>
+                <li class="Header-Navbar-menu-list-item">
+                    <a class="Header-Navbar-menu-list-item-link" href="<?=buildUrl('signup');?>">Inscription</a>
+                </li>
+
+            <?php endif;?>
         </ul>
     </div>
     <span class="Header-Navbar-burger" id="burger">☰</span>

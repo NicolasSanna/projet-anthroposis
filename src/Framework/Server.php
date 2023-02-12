@@ -36,11 +36,11 @@ class Server
     private static function secureAdmin(): bool
     {
         // si le path contient '/admin', et que la personne qui tente d'y accéder n'est pas connectée...
-        // if (str_contains(self::$path, '/admin') && !UserSession::isAuthenticated())
-        // {
-        //     // On renvoie False.
-        //     return false;
-        // }
+        if (str_contains(self::$path, '/admin') && !UserSession::isAuthenticated())
+        {
+            // On renvoie False.
+            return false;
+        }
 
         // Sinon, on renvoie true.
         return true;

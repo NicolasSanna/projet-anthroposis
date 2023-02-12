@@ -6,12 +6,12 @@ use App\Framework\AbstractModel;
 
 class UserModel extends AbstractModel
 {
-    private const ROLE_AUTHOR_STRING = "['ROLE_AUTHOR']";
     private const ROLE_ADMINISTRATOR_STRING = "['ROLE_ADMINISTRATOR']";
+    private const ROLE_AUTHOR_STRING = "['ROLE_AUTHOR']";
     private const ROLE_NEW_USER_STRING = "['ROLE_NEW_USER']";
 
-    private const ROLE_AUTHOR_ID = 2;
     private const ROLE_ADMINISTRATOR_ID = 1;
+    private const ROLE_AUTHOR_ID = 2;
     private const ROLE_NEW_USER_ID = 3;
   
     public function __construct()

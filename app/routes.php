@@ -18,8 +18,20 @@ $routes = [
         'method' => 'signup'
     ],
 
+    'login' => [
+        'path' => '/connexion',
+        'controller' => 'Account\\AccountController',
+        'method' => 'login'
+    ],
+
+    'logout' => [
+        'path' => '/deconnexion',
+        'controller' => 'Account\\AccountController',
+        'method' => 'logout'
+    ],
+
     'dashboard' => [
-        'path' => '/admin/administration',
+        'path' => '/admin/tableaudebord',
         'controller' => 'Admin\\AdminController',
         'method' => 'dashboard'
     ],

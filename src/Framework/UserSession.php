@@ -8,10 +8,18 @@ namespace App\Framework;
  */
 class UserSession extends AbstractSession
 {
+    private const ROLE_ADMINISTRATOR_STRING = "['ROLE_ADMINISTRATOR']";
+    private const ROLE_AUTHOR_STRING = "['ROLE_AUTHOR']";
+    private const ROLE_NEW_USER_STRING = "['ROLE_NEW_USER']";
+
+    private const ROLE_ADMINISTRATOR_ID = 1;
+    private const ROLE_AUTHOR_ID = 2;
+    private const ROLE_NEW_USER_ID = 3;
+
     /**
      * Enregistre les informations de l'utilisateur en session venant du formulaire de connexion et avec les informations relatives venant de la base de données.
      */
-    public static function register(int $userId, string $firstname, string $lastname, string $pseudo, string $email, string $role_label, int $role_id, ): void
+    public static function register(int $userId, string $firstname, string $lastname, string $pseudo, string $email, string $roleLabel, int $roleId, ): void
     {
 
         // On s'assure que la session est bien démarrée en appelant la méthode sessionCheck(). C'est une méthode statique héritée de l'AbstractSession : pas besoin d'instancier le constructeur parent.
@@ -24,8 +32,8 @@ class UserSession extends AbstractSession
             'lastname' => $lastname,
             'pseudo' => $pseudo,
             'email' => $email,
-            'role_label' => $role_label,
-            'role_id' => $role_id,
+            'roleLabel' => $roleLabel,
+            'roleId' => $roleId,
         ];
 
         // On appelle la méthode privée token afin de générer le token aléatoire lors de la connexion de l'utilisateur.
@@ -110,7 +118,7 @@ class UserSession extends AbstractSession
     /**
      * Retourne le nom complet de l'utilisateur connecté
      */
-    public static function getUserFullname(): string
+    public static function getFullname(): string
     {
         if (!self::isAuthenticated())
         {

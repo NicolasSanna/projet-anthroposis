@@ -5,6 +5,7 @@ namespace App\Controller\Account;
 use App\Framework\AbstractController;
 use App\Framework\FlashBag;
 use App\Framework\Post;
+use App\Framework\UserSession;
 use App\Model\UserModel;
 
 class AccountController extends AbstractController
@@ -12,6 +13,7 @@ class AccountController extends AbstractController
     public function signup(): string
     {
         $pageTitle = 'Inscription';
+        $isLogged = UserSession::isAuthenticated();
 
         if(Post::checkIsPost())
         {
@@ -65,12 +67,75 @@ class AccountController extends AbstractController
             }
         }
 
-        return $this->render('signup/signup', [
+        return $this->render('account/signup', [
             'pageTitle' => $pageTitle,
             'firstname' => $firstname??'',
             'lastname' => $lastname??'',
             'pseudo' => $pseudo??'',
             'email' => $email??'',
+            'isLogged' => $isLogged
         ]);
+    }
+
+    public function login(): string
+    {
+        $pageTitle = 'Connexion';
+
+        $isLogged = UserSession::isAuthenticated();
+
+        if(Post::checkIsPost())
+        {
+            $post = Post::checkerForm();
+
+            $email = $post['email'];
+            $password = $post['password'];
+
+            if (!$email || !$password)
+            {
+                FlashBag::addFlash('Tous les champs n\'ont pas été remplis', 'error');
+            }
+
+            if(!filter_var($email, FILTER_VALIDATE_EMAIL))
+            {
+                FlashBag::addFlash('Vérifiez le format de votre email.', 'error'); 
+            }
+
+            $userModel = new UserModel();
+            $user = $userModel->checkCredentials($email, $password);
+
+            if(!$user)
+            {
+                FlashBag::addFlash('Identifiants incorrects', 'error');
+            }
+            else
+            {
+                UserSession::register(
+                    $user->idUser,
+                    $user->firstname,
+                    $user->lastname,
+                    $user->pseudo,
+                    $user->email,
+                    $user->user_role_label,
+                    $user->role_id
+                );
+
+                FlashBag::addFlash('Vous êtes bien connecté');
+
+                return $this->redirect('dashboard');
+            }
+        }
+
+        return $this->render('account/login', [
+            'pageTitle' => $pageTitle, 
+            'email' => $email??'',
+            'isLogged' => $isLogged
+        ]);
+    }
+
+    public function logout(): mixed
+    {
+        UserSession::logout();
+
+        return $this->redirect('home');
     }
 }
