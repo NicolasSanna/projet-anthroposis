@@ -295,6 +295,7 @@
   .MenuAdmin {
     position: relative;
     min-width: 300px;
+    max-width: 300px;
   }
   .MenuAdmin-list {
     flex-direction: column;
