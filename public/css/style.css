@@ -124,6 +124,10 @@
   text-decoration: none;
 }
 
+.sectionAdmin {
+  width: 100%;
+}
+
 .active {
   transform: translateX(-100%);
   transition-duration: 1s;
@@ -132,6 +136,17 @@
 .inactive {
   transform: translateX(-200%);
   transition-duration: 1s;
+}
+
+.articleAdmin-title {
+  text-align: center;
+}
+.articleAdmin-boxImg {
+  text-align: center;
+  margin-top: 20px;
+}
+.articleAdmin-boxImg-img {
+  width: 300px;
 }
 
 .Message {
@@ -203,11 +218,37 @@
 .Form {
   width: 60%;
   margin: 20px 0px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .Form-component {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+.Form-component-file {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+.Form-component-file-buttonImg {
+  padding: 12px 32px;
+  margin: 8px 0px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #917237;
+  color: white;
+  border: none;
+}
+.Form-component-file input[type=file] {
+  left: 0;
+  top: 0;
+  opacity: 0;
+  position: absolute;
+  cursor: pointer;
 }
 .Form-component-input {
   width: 100%;
@@ -234,6 +275,19 @@
 .Form-component-button:hover {
   background-color: white;
   color: #917237;
+}
+.Form-component-select {
+  padding: 12px 20px;
+  background-color: #917237;
+  color: white;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  outline: none;
+}
+.Form-component-select-option {
+  background-color: #917237;
+  color: white;
 }
 .Form-button {
   background-color: #917237;

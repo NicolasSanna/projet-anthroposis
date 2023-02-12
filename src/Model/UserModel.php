@@ -36,7 +36,7 @@ class UserModel extends AbstractModel
         return $result;
     }
 
-    public function getOneByEmail (string $email): mixed
+    public function findOneByEmail (string $email): mixed
     {
         $sql = 'CALL SP_UserSelect(:email)';
 
@@ -49,7 +49,7 @@ class UserModel extends AbstractModel
 
     public function checkCredentials(string $email, string $password): mixed
     {
-        $user = $this->getOneByEmail($email);
+        $user = $this->findOneByEmail($email);
 
         if(!$user)
         {

@@ -31,9 +31,15 @@ $routes = [
     ],
 
     'dashboard' => [
-        'path' => '/admin/tableaudebord',
+        'path' => '/admin/tableau-de-bord',
         'controller' => 'Admin\\AdminController',
         'method' => 'dashboard'
+    ],
+
+    'new-article' => [
+        'path' => '/admin/nouvel-article',
+        'controller' => 'Admin\\Article\\ArticleController',
+        'method' => 'new'
     ],
 
     'articles' => [

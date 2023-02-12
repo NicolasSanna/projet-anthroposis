@@ -4,6 +4,7 @@
 define('PROJECT_DIR', __DIR__);
 define('TEMPLATE_DIR', PROJECT_DIR . '/templates');
 define('PUBLIC_DIR', PROJECT_DIR . '/public');
+define ('IMAGE_DIR', PROJECT_DIR . '/public/img/imgArticle');
 
 // Chargement des informations du fichier .env
 $dotEnv = new App\Framework\DotEnv(PROJECT_DIR . '/.env');
