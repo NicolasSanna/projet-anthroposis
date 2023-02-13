@@ -46,7 +46,8 @@ class CategoryController extends AbstractController
 
         return $this->renderAdmin('admin/category/new', [
             'pageTitle' => $pageTitle,
-            'category' => $category??''
+            'category' => $category??'',
+            'token' => $token
         ]);
     }
 
@@ -69,7 +70,6 @@ class CategoryController extends AbstractController
     {
         
         $token = UserSession::token();
-        $userId = UserSession::getId();
         $categorySlug = Get::key('categorie');
 
         $categoryModel = new CategoryModel();
