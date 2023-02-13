@@ -66,6 +66,30 @@ $routes = [
         'method' => 'new'
     ],
 
+    'categories' => [
+        'path' => '/admin/administrateur/categories',
+        'controller' => 'Admin\\Category\\CategoryController',
+        'method' => 'categories'
+    ],
+
+    'delete-category-with-articles' => [
+        'path' => '/api/admin/administrateur/delete-category-with-articles',
+        'controller' => 'API\\CategoryController',
+        'method' => 'deleteWithArticles'
+    ],
+
+    'delete-category-without-articles' => [
+        'path' => '/api/admin/administrateur/delete-category-without-articles',
+        'controller' => 'API\\CategoryController',
+        'method' => 'deleteWithoutArticles'
+    ],
+
+    'update-category' => [
+        'path' => '/admin/administrateur/modifier-categorie',
+        'controller' => 'Admin\\Category\\CategoryController',
+        'method' => 'update'
+    ],
+
     '404' => [
         'path' => '/404',
         'controller' => 'HomeController',

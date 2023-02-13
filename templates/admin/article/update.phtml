@@ -1,10 +1,10 @@
-<div class="articleAdmin">
-    <h2 class="articleAdmin-title">Modifier</h2>
-    <div class="articleAdmin-boxImg">
+<div class="Admin">
+    <h2 class="Admin-title">Modifier</h2>
+    <div class="Admin-boxImg">
         <?php if(!empty($article->image)):?>
-            <img class="articleAdmin-boxImg-img" id="previewImg" src="<?=asset('img/imgArticle' . '/' . $article->image);?>" alt="">
+            <img class="Admin-boxImg-img" id="previewImg" src="<?=asset('img/imgArticle' . '/' . $article->image);?>" alt="">
         <?php else:?>
-            <img class="articleAdmin-boxImg-img" id="previewImg" src="" alt="">
+            <img class="Admin-boxImg-img" id="previewImg" src="" alt="">
         <?php endif;?>
     </div>
     <form action="<?=buildUrl('update-article', ['article' => $article->article_slug]);?>" method="post" class="Form" id="Form" enctype="multipart/form-data">

@@ -21,7 +21,7 @@ BEGIN
         VALUES
         (v_category, v_category_slug);
 
-        SET message = CONCAT('La catégorie ', v_category, ' a bien été ajouté');
+        SET message = CONCAT('La catégorie ', v_category, ' a bien été ajoutée');
 
     END IF;
 

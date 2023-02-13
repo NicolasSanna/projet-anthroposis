@@ -82,7 +82,7 @@ class ArticleController extends AbstractController
         $articleModel = new ArticleModel();
         $articles = $articleModel->findAllByUser($userId);
 
-        return $this->renderAdmin('admin/articles', [
+        return $this->renderAdmin('admin/article/articles', [
             'pageTitle' => $pageTitle,
             'articles' => $articles,
             'token' => $token

@@ -142,24 +142,24 @@
   transition-duration: 1s;
 }
 
-.articleAdmin {
+.Admin {
   text-align: center;
 }
-.articleAdmin-title {
+.Admin-title {
   text-align: center;
 }
-.articleAdmin-boxImg {
+.Admin-boxImg {
   text-align: center;
   margin-top: 20px;
 }
-.articleAdmin-boxImg-img {
+.Admin-boxImg-img {
   width: 300px;
 }
-.articleAdmin-delete {
+.Admin-delete {
   color: #db3535;
   text-decoration: none;
 }
-.articleAdmin-modify {
+.Admin-modify {
   text-decoration: none;
   color: #917237;
 }

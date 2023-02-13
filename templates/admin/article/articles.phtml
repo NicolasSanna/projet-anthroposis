@@ -1,5 +1,5 @@
-<div class="articleAdmin">
-    <h2 class="articleAdmin-title">Mes articles</h2>
+<div class="Admin">
+    <h2 class="Admin-title">Mes articles</h2>
     <table>
         <thead>
             <tr>
@@ -19,8 +19,8 @@
                     <td><?=$article->date_fr;?></td>
                     <td><?=$article->category_name;?></td>
                     <td><?=$article->status_label;?></td>
-                    <td><a class="articleAdmin-modify" href="<?=buildUrl('update-article', ['article' => $article->slug]);?>">Modifier</a></td>
-                    <td><a class="articleAdmin-delete" href="<?=buildUrl('delete-article', ['article' => $article->slug, 'token' => $token]);?>">Supprimer</a></td>
+                    <td><a class="Admin-modify" href="<?=buildUrl('update-article', ['article' => $article->slug]);?>">Modifier</a></td>
+                    <td><a class="Admin-delete" href="<?=buildUrl('delete-article', ['article' => $article->slug, 'token' => $token]);?>">Supprimer</a></td>
                 </tr>
             <?php endforeach;?>
         </tbody>

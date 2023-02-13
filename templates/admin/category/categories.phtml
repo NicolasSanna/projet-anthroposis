@@ -1,0 +1,34 @@
+<div class="Admin">
+    <h2 class="Admin-title">Catégories</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Catégorie</th>
+                <th colspan="3">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td>Non classé</td>
+                <td>Modifier</td>
+                <td>Supprimer avec les articles</td>
+                <td>Supprimer sans les articles</td>
+            </tr>
+
+            <?php foreach ($categories as $category):?>
+
+                <tr id="category-<?=$category->idCat;?>">
+                    <td><?=$category->category_name;?></td>
+                    <td><a class="Admin-modify" href="<?=buildUrl('update-category', ['categorie' => $category->slug]);?>">Modifier</a></td>
+                    <td><a class="Admin-delete Admin-delete-with-articles" href="<?=buildUrl('delete-category-with-articles', ['id' => $category->idCat, 'token' => $token]);?>">Supprimer avec les articles</a></td>
+                    <td><a class="Admin-delete Admin-delete-without-articles" href="<?=buildUrl('delete-category-without-articles', ['id' => $category->idCat, 'token' => $token]);?>">Supprimer sans les articles</a></td>
+                </tr>
+            
+            <?php endforeach;?>
+
+        </tbody>
+    </table>
+</div>
+
+<script src="<?=asset('js/category/DeleteCategoryManager.js');?>"></script>

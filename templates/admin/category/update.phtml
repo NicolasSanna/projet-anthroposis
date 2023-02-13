@@ -1,0 +1,12 @@
+<div class="Admin">
+    <h2 class="Admin-title">Modifier une catégorie</h2>
+    <form action="<?=buildUrl('update-category', ['categorie' => $category->slug]);?>" method="post" class="Form">
+        <div class="Form-component">
+            <input class="Form-component-input" type="text" name="category" value="<?=$categoryName;?>" placeholder="Nom de la catégorie" maxlength="50" required>
+        </div>
+        <div class="Form-component">
+            <input type="hidden" name="checkToken" value="<?=$token;?>">
+        </div>
+        <input type="submit" class="Form-button" value="Modifier">
+    </form>
+</div>

@@ -1,7 +1,12 @@
-<h2>Ajouter une catégorie</h2>
-<form action="" method="post" class="Form">
-    <div class="Form-component">
-        <input class="Form-component-input" type="text" name="category" value="" placeholder="Nom de la catégorie" maxlength="50" required>
-    </div>
-    <input type="submit" class="Form-button" value="Ajouter">
-</form>
+<div class="Admin">
+    <h2 class="Admin-title">Ajouter une catégorie</h2>
+    <form action="<?=buildUrl('new-category');?>" method="post" class="Form">
+        <div class="Form-component">
+            <input class="Form-component-input" type="text" name="category" value="<?=$category;?>" placeholder="Nom de la catégorie" maxlength="50" required>
+        </div>
+        <div class="Form-component">
+            <input type="hidden" name="checkToken" value="<?=$token;?>">
+        </div>
+        <input type="submit" class="Form-button" value="Ajouter">
+    </form>
+</div>

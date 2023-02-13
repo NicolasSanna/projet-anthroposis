@@ -31,4 +31,46 @@ class CategoryModel extends AbstractModel
 
         return $result;
     }
+
+    public function deleteWithArticles(int $categoryId): void
+    {
+        $sql = 'CALL SP_CategoryWithArticlesDelete(:categoryId)';
+
+        $this->database->executeQuery($sql, [
+            'categoryId' => $categoryId
+        ]);
+    }
+
+    public function deleteWithoutArticles(int $categoryId): void
+    {
+        $sql = 'CALL SP_CategoryWithoutArticlesDelete(:categoryId)';
+
+        $this->database->executeQuery($sql, [
+            'categoryId' => $categoryId
+        ]);
+    }
+
+    public function findOneBySlug(string $categorySlug): mixed
+    {
+        $sql = 'CALL SP_CategorySelect(:categorySlug)';
+
+        $result = $this->database->getOneResult($sql, [
+            'categorySlug' => $categorySlug
+        ]);
+
+        return $result;
+    }
+
+    public function update(int $categoryId, string $category, string $categorySlug): mixed
+    {
+        $sql = 'CALL SP_CategoryUpdate(:categoryId, :category, :categorySlug)';
+
+        $result = $this->database->getOneResult($sql, [
+            'categoryId' => $categoryId,
+            'category' => $category,
+            'categorySlug' => $categorySlug
+        ]);
+
+        return $result;
+    }
 }
