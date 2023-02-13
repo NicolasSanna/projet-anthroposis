@@ -75,7 +75,7 @@ class UserSession extends AbstractSession
     /**
      * On créé une méthode statique getId.
      */
-    public static function getId(): int
+    public static function getId(): null|int
     {
         // Si à l'appel de la méthode statique isAuthenticated() il n'y a rien on retourne null.
         if (!self::isAuthenticated())
@@ -90,7 +90,7 @@ class UserSession extends AbstractSession
     /**
      * On créé une méthode statique getFirstname()
      */
-    public static function getFirstname(): string
+    public static function getFirstname(): null|string
     {
         // Si à l'appel de la méthode statique isAuthenticated() il n'y a rien on retourne null.
         if (!self::isAuthenticated())
@@ -104,7 +104,7 @@ class UserSession extends AbstractSession
     /**
      * On créé une méthode statique getFirstname()
      */
-    public static function getLastname(): string
+    public static function getLastname(): null|string
     {
          // Si à l'appel de la méthode statique isAuthenticated() il n'y a rien on retourne null.
         if (!self::isAuthenticated())
@@ -118,7 +118,7 @@ class UserSession extends AbstractSession
     /**
      * Retourne le nom complet de l'utilisateur connecté
      */
-    public static function getFullname(): string
+    public static function getFullname(): null|string
     {
         if (!self::isAuthenticated())
         {
@@ -131,7 +131,7 @@ class UserSession extends AbstractSession
     /**
      * On créé une méthode statique getFirstname()
      */
-    public static function getEmail(): string
+    public static function getEmail(): null|string
     {
         // Si à l'appel de la méthode statique isAuthenticated() il n'y a rien on retourne null.
         if (!self::isAuthenticated())
@@ -143,10 +143,55 @@ class UserSession extends AbstractSession
         return $_SESSION['user']['email'];
     }
 
+    public static function isAdmin(): null|bool
+    {
+        if (!self::isAuthenticated())
+        {
+            return null;
+        }
+
+        if($_SESSION['user']['roleId'] === self::ROLE_ADMINISTRATOR_ID && $_SESSION['user']['roleLabel'] === self::ROLE_ADMINISTRATOR_STRING)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    public static function isAuthor(): null|bool
+    {
+        if (!self::isAuthenticated())
+        {
+            return null;
+        }
+
+        if($_SESSION['user']['roleId'] === self::ROLE_AUTHOR_ID && $_SESSION['user']['roleLabel'] === self::ROLE_AUTHOR_STRING)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    public static function isNewUser(): null|bool
+    {
+        if (!self::isAuthenticated())
+        {
+            return null;
+        }
+
+        if($_SESSION['user']['roleId'] === self::ROLE_NEW_USER_ID && $_SESSION['user']['roleLabel'] === self::ROLE_NEW_USER_STRING)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
     /**
      * On créé une fonction statique token().
      */
-    public static function token(): string
+    public static function token(): null|string
     {
         // Si à l'appel de la méthode statique isAuthenticated() il n'y a rien on retourne null.
         if (!self::isAuthenticated())

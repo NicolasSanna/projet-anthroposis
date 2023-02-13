@@ -98,6 +98,7 @@
   bottom: 0;
   color: white;
   width: 100%;
+  z-index: 1;
 }
 .MenuAdmin-title {
   text-align: center;
@@ -111,6 +112,7 @@
   flex-direction: row;
   list-style: none;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .MenuAdmin-list-item {
   text-align: center;
@@ -363,6 +365,7 @@
     position: relative;
     min-width: 300px;
     max-width: 300px;
+    z-index: 0;
   }
   .MenuAdmin-list {
     flex-direction: column;

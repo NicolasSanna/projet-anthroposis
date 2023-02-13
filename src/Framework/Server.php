@@ -42,6 +42,26 @@ class Server
             return false;
         }
 
+        if (str_contains(self::$path, '/admin/auteur'))
+        {
+            if(UserSession::isAdmin() || UserSession::isAuthor())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        if (str_contains(self::$path, '/admin/administrateur'))
+        {
+            if(!UserSession::isAdmin())
+            {
+                return false;
+            }
+        }
+
         // Sinon, on renvoie true.
         return true;
     }

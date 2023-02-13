@@ -1,1 +1,9 @@
-<h3>Bienvenue sur votre tableau de bord</h3>
+<?php use App\Framework\UserSession;?>
+
+<?php if(UserSession::isNewUser()):?>
+    <p>Bievenue nouvel utilisateur</p>
+<?php elseif(UserSession::isAuthor()):?>
+    <p>Bienvenue auteur</p>
+<?php elseif(UserSession::isAdmin()):?>
+    <p>Bienvenue Administrateur</p>
+<?php endif;?>

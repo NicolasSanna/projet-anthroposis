@@ -1,15 +1,57 @@
+<?php use App\Framework\UserSession;?>
+
 <div class="MenuAdmin">
     <h3 class="MenuAdmin-title">Menu</h3>
     <ul class="MenuAdmin-list">
-    <li class="MenuAdmin-list-item">
+        <li class="MenuAdmin-list-item">
             <a class="MenuAdmin-list-item-link" href="<?=buildUrl('dashboard');?>">Tableau de bord</a>
         </li>
-        <li class="MenuAdmin-list-item">
-            <a class="MenuAdmin-list-item-link" href="<?=buildUrl('new-article');?>">Nouvel article</a>
-        </li>
-        <li class="MenuAdmin-list-item">
-            <a class="MenuAdmin-list-item-link" href="<?=buildUrl('articles');?>">Mes articles</a>
-        </li>
+
+        <?php if (UserSession::isAuthor() || UserSession::isAdmin()):?>
+
+            <h3 class="MenuAdmin-title">Gestion d'Auteur</h3>
+
+            <li class="MenuAdmin-list-item">
+                <a class="MenuAdmin-list-item-link" href="<?=buildUrl('new-article');?>">Nouvel article</a>
+            </li>
+            <li class="MenuAdmin-list-item">
+                <a class="MenuAdmin-list-item-link" href="<?=buildUrl('articles');?>">Mes articles</a>
+            </li>
+
+        <?php endif;?>
+
+        <?php if(UserSession::isAdmin()):?>
+
+            <h3 class="MenuAdmin-title">Gestion d'Administrateur</h3>
+
+            <h4 class="MenuAdmin-title">Catégories</h4>
+
+            <li class="MenuAdmin-list-item">
+                <a class="MenuAdmin-list-item-link" href="<?=buildUrl('new-category');?>">Créer une catégorie</a>
+            </li>
+            
+            <li class="MenuAdmin-list-item">
+                <a class="MenuAdmin-list-item-link" href="">Gérer les catégories</a>
+            </li>
+
+            <h4 class="MenuAdmin-title">Utilisateurs</h4>
+
+            <li class="MenuAdmin-list-item">
+                <a class="MenuAdmin-list-item-link" href="">Gérer les utilisateurs</a>
+            </li>
+
+            <li class="MenuAdmin-list-item">
+                <a class="MenuAdmin-list-item-link" href="">Gérer les articles des utilisateurs</a>
+            </li>
+
+            <h4 class="MenuAdmin-title">Commentaires</h4>
+
+            <li class="MenuAdmin-list-item">
+                <a class="MenuAdmin-list-item-link" href="">Gérer les commentaires</a>
+            </li>
+
+        <?php endif;?>
+
         <li class="MenuAdmin-list-item">
             <a class="MenuAdmin-list-item-link" href="<?=buildUrl('logout');?>" >Se déconnecter</a>
         </li>

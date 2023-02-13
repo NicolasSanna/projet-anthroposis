@@ -35,29 +35,35 @@ $routes = [
         'controller' => 'Admin\\AdminController',
         'method' => 'dashboard'
     ],
-
-    'new-article' => [
-        'path' => '/admin/nouvel-article',
-        'controller' => 'Admin\\Article\\ArticleController',
-        'method' => 'new'
-    ],
-
+    
     'articles' => [
-        'path' => '/admin/articles',
+        'path' => '/admin/auteur/mes-articles',
         'controller' => 'Admin\\Article\\ArticleController',
         'method' => 'articles'
     ],
 
+    'new-article' => [
+        'path' => '/admin/auteur/nouvel-article',
+        'controller' => 'Admin\\Article\\ArticleController',
+        'method' => 'new'
+    ],
+
     'delete-article' => [
-        'path' => '/api/delete-article',
+        'path' => '/api/admin/auteur/delete-article',
         'controller' => 'API\\ArticleController',
         'method' => 'delete'
     ],
 
     'update-article' => [
-        'path' => '/admin/modifier-article',
+        'path' => '/admin/auteur/modifier-article',
         'controller' => 'Admin\\Article\\ArticleController',
         'method' => 'update'
+    ],
+
+    'new-category' => [
+        'path' => '/admin/administrateur/ajouter-une-categorie',
+        'controller' => 'Admin\\Category\\CategoryController',
+        'method' => 'new'
     ],
 
     '404' => [
