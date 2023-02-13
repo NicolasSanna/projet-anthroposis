@@ -54,6 +54,12 @@ $routes = [
         'method' => 'delete'
     ],
 
+    'update-article' => [
+        'path' => '/admin/modifier-article',
+        'controller' => 'Admin\\Article\\ArticleController',
+        'method' => 'update'
+    ],
+
     '404' => [
         'path' => '/404',
         'controller' => 'HomeController',

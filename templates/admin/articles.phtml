@@ -19,7 +19,7 @@
                     <td><?=$article->date_fr;?></td>
                     <td><?=$article->category_name;?></td>
                     <td><?=$article->status_label;?></td>
-                    <td><a class="articleAdmin-modify" href="">Modifier</a></td>
+                    <td><a class="articleAdmin-modify" href="<?=buildUrl('update-article', ['article' => $article->slug]);?>">Modifier</a></td>
                     <td><a class="articleAdmin-delete" href="<?=buildUrl('delete-article', ['article' => $article->slug, 'token' => $token]);?>">Supprimer</a></td>
                 </tr>
             <?php endforeach;?>

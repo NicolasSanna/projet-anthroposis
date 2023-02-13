@@ -61,7 +61,7 @@ START TRANSACTION;
         title VARCHAR(255) NOT NULL,
         description VARCHAR(255) NOT NULL,
         content LONGTEXT NOT NULL,
-        image VARCHAR(128) NULL,
+        image VARCHAR(255) NULL,
         slug VARCHAR(128) NOT NULL,
         created_at DATETIME NOT NULL,
         updated_at DATETIME NULL,

@@ -22,7 +22,12 @@ class ArticleController extends AbstractController
         }
 
         $articleModel = new ArticleModel();
-        $articleModel->delete($userId, $articleSlug);
+        $article = $articleModel->delete($userId, $articleSlug);
+
+        if(!empty($article->image))
+        {
+            unlink(IMAGE_DIR . '/' . $article->image);
+        }
 
         return json_encode($articleSlug);
     }

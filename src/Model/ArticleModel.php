@@ -41,13 +41,46 @@ class ArticleModel extends AbstractModel
         return $results;
     }
 
-    public function delete (int $userId, string $articleSlug): void
+    public function delete (int $userId, string $articleSlug): mixed
     {
+        $article = $this->findOneByUser($userId, $articleSlug);
+
         $sql = 'CALL SP_ArticleDelete(:userId, :articleSlug)';
 
         $this->database->executeQuery($sql, [
             'userId' => $userId,
             'articleSlug' => $articleSlug
+        ]);
+
+        return $article;
+    }
+
+    public function findOneByUser(int $userId, string $articleSlug): mixed
+    {
+        $sql = 'CALL SP_ArticleUserOneSelect(:userId, :articleSlug)';
+        
+        $result = $this->database->getOneResult($sql, [
+            'userId' => $userId,
+            'articleSlug' => $articleSlug
+        ]);
+
+        return $result;
+    }
+
+    public function update(string $title, string $description, string $content, string $slug, int $userId, int $categoryId, int $articleId, string $image = null): void
+    {
+        $sql = 'CALL SP_ArticleUpdate(:title, :description, :content, :image, :slug, :userId, :categoryId, :statusId, :articleId)';
+
+        $this->database->executeQuery($sql, [
+            'title' => $title,
+            'description' => $description,
+            'content' => $content,
+            'image' => $image,
+            'slug' => $slug,
+            'userId' => $userId,
+            'categoryId' => $categoryId,
+            'statusId' => self::STATUS_NOT_APPROVED,
+            'articleId' => $articleId
         ]);
     }
 }

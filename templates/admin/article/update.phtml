@@ -1,0 +1,39 @@
+<div class="articleAdmin">
+    <h2 class="articleAdmin-title">Modifier</h2>
+    <div class="articleAdmin-boxImg">
+        <?php if(!empty($article->image)):?>
+            <img class="articleAdmin-boxImg-img" id="previewImg" src="<?=asset('img/imgArticle' . '/' . $article->image);?>" alt="">
+        <?php else:?>
+            <img class="articleAdmin-boxImg-img" id="previewImg" src="" alt="">
+        <?php endif;?>
+    </div>
+    <form action="<?=buildUrl('update-article', ['article' => $article->article_slug]);?>" method="post" class="Form" id="Form" enctype="multipart/form-data">
+        <div class="Form-component">
+            <input class="Form-component-input" type="text" name="title" value="<?=$title;?>" placeholder="Titre" maxlength="50" required>
+        </div>
+        <div class="Form-component">
+            <input class="Form-component-input" type="text" name="description" value="<?=$description;?>" placeholder="Description" maxlength="50" required>
+        </div>
+        <div class="Form-component">
+            <textarea class="Form-component-input" type="text" name="content" placeholder="Contenu" rows="10"required><?=$content;?></textarea>
+        </div>
+        <div class="Form-component">
+            <select name="selectCategory" class="Form-component-select">
+                <?php foreach($categories as $category):?>
+                    <?php $selected = isset($selectedCategory) && $category->idCat === $selectedCategory ? 'selected' : '';?>
+                    <option <?=$selected;?> class="Form-component-select-option" value="<?=$category->idCat;?>"><?=$category->category_name;?></option>
+                <?php endforeach;?>
+            </select>
+        </div>
+        <div class="Form-component-file">
+            <button class="Form-component-file-buttonImg">Ajouter une image</button>
+            <input class="Form-component-input" type="file" name="image" id="inputImage" accept="image/.png,.jpg,.jpeg,.img">
+        </div>
+        <div class="Form-component">
+            <input type="hidden" name="checkToken" value="<?=$token;?>">
+        </div>
+        <input type="submit" class="Form-button" value="Modifier">
+    </form>
+</div>
+
+<script src="<?=asset('js/article/UploadImageManager.js');?>"></script>
