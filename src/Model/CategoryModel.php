@@ -19,4 +19,16 @@ class CategoryModel extends AbstractModel
 
         return $results;
     }
+
+    public function insert(string $category, string $categorySlug): mixed
+    {   
+        $sql = 'CALL SP_CategoryInsert(:category, :categorySlug)';
+
+        $result = $this->database->getOneResult($sql, [
+            'category' => $category,
+            'categorySlug' => $categorySlug
+        ]);
+
+        return $result;
+    }
 }
