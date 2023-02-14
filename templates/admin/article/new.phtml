@@ -15,6 +15,7 @@
         </div>
         <div class="Form-component">
             <select name="selectCategory" class="Form-component-select">
+                <option value="1">Non classé</option>
                 <?php foreach($categories as $category):?>
                     <?php $selected = isset($selectedCategory) && $category->idCat === $selectedCategory ? 'selected' : '';?>
                     <option <?=$selected;?> class="Form-component-select-option" value="<?=$category->idCat;?>"><?=$category->category_name;?></option>

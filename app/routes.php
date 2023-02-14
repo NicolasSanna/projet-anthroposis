@@ -90,6 +90,30 @@ $routes = [
         'method' => 'update'
     ],
 
+    'users' => [
+        'path' => '/admin/administrateur/utilisateurs',
+        'controller' => 'Admin\\User\\UserController',
+        'method' => 'manage'
+    ],
+
+    'update-user-to-author' => [
+        'path' => '/admin/administrateur/utilisateur-auteur',
+        'controller' => 'Admin\\User\\UserController',
+        'method' => 'updateToAuthor'
+    ],
+
+    'update-user-to-new-user' => [
+        'path' => '/admin/administrateur/utilisateur-nouvel-utilisateur',
+        'controller' => 'Admin\\User\\UserController',
+        'method' => 'updateToNewUser'
+    ],
+
+    'manage-users-articles' => [
+        'path' => '/admin/administrateur/gerer-utilisateurs-articles',
+        'controller' => 'Admin\\Article\\ArticleController',
+        'method' => 'usersArticles'
+    ],
+
     '404' => [
         'path' => '/404',
         'controller' => 'HomeController',

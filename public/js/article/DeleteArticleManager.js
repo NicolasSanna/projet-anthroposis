@@ -2,7 +2,7 @@ class DeleteArticleManager
 {
     constructor()
     {
-        this.articles = document.querySelectorAll('.articleAdmin-delete')
+        this.articles = document.querySelectorAll('.Admin-delete')
 
         for(const articleToDelete of this.articles)
         {

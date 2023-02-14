@@ -30,7 +30,7 @@ class ArticleModel extends AbstractModel
         ]);
     }
 
-    public function findAllByUser(int $userId): mixed
+    public function findAllByUser(int $userId): array
     {
         $sql = 'CALL SP_ArticleUserAllSelect(:userId)';
 
@@ -82,5 +82,16 @@ class ArticleModel extends AbstractModel
             'statusId' => self::STATUS_NOT_APPROVED,
             'articleId' => $articleId
         ]);
+    }
+
+    public function usersArticles (): array
+    {
+        $sql = 'CALL SP_UsersArticlesManageSelect(:statusId)';
+
+        $results = $this->database->getAllResults($sql, [
+            'statusId' => self::STATUS_NOT_APPROVED
+        ]);
+
+        return $results;
     }
 }

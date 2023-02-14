@@ -63,4 +63,35 @@ class UserModel extends AbstractModel
 
         return $user;
     }
+
+    public function findAll(): array
+    {
+        $sql = 'CALL SP_UserManageSelect()';
+
+        $results = $this->database->getAllResults($sql);
+
+        return $results;
+    }
+
+    public function manageToAuthor(int $userId): void
+    {
+        $sql = 'CALL SP_UserManageUpdate(:userId, :roleId, :roleLabel)';
+
+        $this->database->executeQuery($sql, [
+            'userId' => $userId,
+            'roleId' => self::ROLE_AUTHOR_ID,
+            'roleLabel' => self::ROLE_AUTHOR_STRING
+        ]);
+    }
+
+    public function manageToNewUser(int $userId): void
+    {
+        $sql = 'CALL SP_UserManageUpdate(:userId, :roleId, :roleLabel)';
+
+        $this->database->executeQuery($sql, [
+            'userId' => $userId,
+            'roleId' => self::ROLE_NEW_USER_ID,
+            'roleLabel' => self::ROLE_NEW_USER_STRING
+        ]);
+    }
 }

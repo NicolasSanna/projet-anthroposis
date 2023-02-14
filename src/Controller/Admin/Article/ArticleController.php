@@ -52,7 +52,7 @@ class ArticleController extends AbstractController
 
             if(!FlashBag::hasMessages('error'))
             {
-                $slugifyTitle = slugify($title);
+                $slugifyTitle = slugify($title) . '-' . (time()+ rand(1,1000));
                 $articleModel = new ArticleModel();
                 $articleModel->insert($title, $description, $content, $slugifyTitle, $userId, $selectedCategory, $fileName);
 
@@ -157,6 +157,19 @@ class ArticleController extends AbstractController
             'categories' => $categories,
             'selectedCategory' => $selectedCategory??$article->category_id,
             'token' => $token
+        ]);
+    }
+
+    public function usersArticles()
+    {
+        $pageTitle = 'Gérer les articles des utilisateurs';
+
+        $articleModel = new ArticleModel();
+        $articles = $articleModel->usersArticles();
+
+        return $this->renderAdmin('admin/article/users-articles', [
+            'pageTitle' => $pageTitle,
+            'articles' => $articles
         ]);
     }
 }
