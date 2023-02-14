@@ -96,6 +96,8 @@
 
                 &-item
                 {
+                    margin-top:10px;
+                    margin-bottom:10px;
                     &-link
                     {
                         display:block;
@@ -145,6 +147,7 @@
         margin-right:10px;
         margin-top:8px;
         margin-bottom:8px;
+        display:none;
     }
 
     &-list
@@ -167,7 +170,13 @@
             {
                 color:white;
                 text-decoration: none;
+                // display:none;
             }
+
+            // &-icon
+            // {
+            //     display:block;
+            // }
         }
     }
 }
@@ -566,6 +575,12 @@
         min-width: 300px;
         max-width: 300px;
         z-index: 0;
+
+        &-title
+        {
+            display:block;
+        }
+
         &-list
         {
             flex-direction: column;
@@ -577,8 +592,14 @@
 
                 &-link
                 {
+                    // display:block;
                     color:white;
                 }
+
+                // &-icon
+                // {
+                //     display:none;
+                // }
             }
         }
     }

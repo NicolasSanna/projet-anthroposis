@@ -70,6 +70,10 @@
   list-style: none;
   justify-content: space-between;
 }
+.Header-Navbar-menu-list-item {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 .Header-Navbar-menu-list-item-link {
   display: block;
   text-decoration: none;
@@ -106,6 +110,7 @@
   margin-right: 10px;
   margin-top: 8px;
   margin-bottom: 8px;
+  display: none;
 }
 .MenuAdmin-list {
   display: flex;
@@ -412,6 +417,9 @@
     min-width: 300px;
     max-width: 300px;
     z-index: 0;
+  }
+  .MenuAdmin-title {
+    display: block;
   }
   .MenuAdmin-list {
     flex-direction: column;
