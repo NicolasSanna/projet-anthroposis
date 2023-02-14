@@ -320,6 +320,52 @@
   color: #917237;
 }
 
+.Article {
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 10%;
+}
+.Article-title {
+  font-family: "Baskerville";
+  font-size: 24px;
+  margin: 20px 0px;
+}
+.Article-description {
+  font-weight: bold;
+  margin: 20px 0px;
+}
+.Article-boxImg {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.Article-boxImg-img {
+  width: 100%;
+}
+.Article-content {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.Article-hr {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.Article-button {
+  background-color: #917237;
+  border: none;
+  color: white;
+  padding: 12px 32px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.5s;
+  border: 3px solid #917237;
+  margin: 8px 0px;
+}
+.Article-button:hover {
+  background-color: white;
+  color: #917237;
+}
+
 .Footer {
   left: 0;
   bottom: 0;

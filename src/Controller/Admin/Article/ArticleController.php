@@ -167,9 +167,56 @@ class ArticleController extends AbstractController
         $articleModel = new ArticleModel();
         $articles = $articleModel->usersArticles();
 
-        return $this->renderAdmin('admin/article/users-articles', [
+        return $this->renderAdmin('admin/article/articles-users', [
             'pageTitle' => $pageTitle,
             'articles' => $articles
         ]);
+    }
+
+    public function check()
+    {
+        $pageTitle = 'Gérer l\'article';
+        
+        $articleSlug = Get::key('article');
+        $token = UserSession::token();
+
+        $articleModel = new ArticleModel();
+        $article = $articleModel->findOneBySlug($articleSlug);
+
+        if(!$article)
+        {
+            return $this->redirect('404');
+        }
+
+        return $this->renderAdmin('admin/article/article', [
+            'pageTitle' => $pageTitle,
+            'article' => $article,
+            'token' => $token
+        ]);
+    }
+
+    public function approbe()
+    {
+        $articleSlug = Get::key('article');
+
+        $checkToken = Get::key('token');
+        $token = UserSession::token();
+        
+        if($token != $checkToken)
+        {
+            return $this->redirect('403');
+        }
+        
+        $articleModel = new ArticleModel();
+        $article = $articleModel->findOneBySlug($articleSlug);
+
+        if(!$article)
+        {
+            return $this->redirect('404');
+        }
+
+        $articleModel->approbe($articleSlug);
+        
+        return $this->redirect('manage-articles-users');
     }
 }

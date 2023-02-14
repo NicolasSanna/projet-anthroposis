@@ -94,4 +94,25 @@ class ArticleModel extends AbstractModel
 
         return $results;
     }
+
+    public function findOneBySlug(string $articleSlug): mixed
+    {
+        $sql = 'CALL SP_ArticleSelect(:articleSlug)';
+
+        $result = $this->database->getOneResult($sql, [
+            'articleSlug' => $articleSlug
+        ]);
+
+        return $result;
+    }
+
+    public function approbe(string $articleSlug): void
+    {
+        $sql = 'CALL SP_ArticleManageUpdate(:articleSlug, :statusId)';
+
+        $this->database->executeQuery($sql, [
+            'articleSlug' => $articleSlug,
+            'statusId' => self::STATUS_APPROVED
+        ]);
+    }
 }

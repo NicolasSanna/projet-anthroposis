@@ -1,0 +1,29 @@
+<div class="Admin">
+    <h2 class="Admin-title">Gérer les articles des utilisateurs</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Créé par</th>
+                <th>Création</th>
+                <th>Statut</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($articles as $article):?>
+
+                <tr>
+                    <td><?=$article->title;?></td>
+                    <td><?=$article->description;?></td>
+                    <td><?=$article->pseudo;?></td>
+                    <td><?=$article->date_fr;?></td>
+                    <td><?=$article->status_label;?></td>
+                    <td><a class="Admin-modify" href="<?=buildUrl('check-article', ['article' => $article->slug]);?>">Vérifier</a></td>
+                </tr>
+
+            <?php endforeach;?>
+        </tbody>
+    </table>
+</div>

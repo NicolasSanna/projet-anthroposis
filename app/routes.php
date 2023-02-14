@@ -108,10 +108,22 @@ $routes = [
         'method' => 'updateToNewUser'
     ],
 
-    'manage-users-articles' => [
-        'path' => '/admin/administrateur/gerer-utilisateurs-articles',
+    'manage-articles-users' => [
+        'path' => '/admin/administrateur/gerer-articles-utilisateurs',
         'controller' => 'Admin\\Article\\ArticleController',
         'method' => 'usersArticles'
+    ],
+
+    'check-article' => [
+        'path' => '/admin/administrateur/gerer-article-utilisateur',
+        'controller' => 'Admin\\Article\\ArticleController',
+        'method' => 'check'
+    ],
+
+    'approbe' => [
+        'path' => '/admin/administrateur/approuver-article',
+        'controller' => 'Admin\\Article\\ArticleController',
+        'method' => 'approbe'
     ],
 
     '404' => [
