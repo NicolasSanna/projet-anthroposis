@@ -12,7 +12,7 @@ abstract class AbstractModel
     protected Database $database;
 
     /**
-     * On créé la méthode publique construct qui ne prend aucun paramètre. 
+     * On créé la méthode protégée construct qui ne prend aucun paramètre. 
      */
     protected function __construct()
     {

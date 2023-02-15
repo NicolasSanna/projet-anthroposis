@@ -139,7 +139,7 @@ class ArticleController extends AbstractController
 
             if(!FlashBag::hasMessages('error'))
             {
-                $slugifyTitle = slugify($title);
+                $slugifyTitle = $slugifyTitle = slugify($title) . '-' . (time()+ rand(1,1000));
                 $articleModel = new ArticleModel();
                 $articleModel->update($title, $description, $content, $slugifyTitle, $userId, $selectedCategory, $article->idArt, $fileName);
 

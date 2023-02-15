@@ -50,7 +50,7 @@ class DeleteCategoryManager
     {
         e.preventDefault();
         
-        const confirmation = window.confirm('Êtes-vous sûr de vouloir supprimer cette catégorie ? ');
+        const confirmation = window.confirm('Êtes-vous sûr de vouloir supprimer cette catégorie en conservant ses articles associés ? ');
 
         if (confirmation === true)
         {
