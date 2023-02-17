@@ -115,4 +115,16 @@ class ArticleModel extends AbstractModel
             'statusId' => self::STATUS_APPROVED
         ]);
     }
+
+    public function searchArticle (string $search): array
+    {
+        $sql = 'CALL SP_SearchArticleSelect(:search, :statusId)';
+
+        $results = $this->database->getAllResults($sql, [
+            'search' => $search,
+            'statusId' => self::STATUS_APPROVED
+        ]);
+
+        return $results;
+    }
 }

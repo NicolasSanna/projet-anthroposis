@@ -8,7 +8,7 @@
                 <a class="Header-Navbar-menu-list-item-link" href="">Articles</a>
             </li>
             <li class="Header-Navbar-menu-list-item">
-                <a class="Header-Navbar-menu-list-item-link" href="">Rechercher</a>
+                <a class="Header-Navbar-menu-list-item-link" href="<?=buildUrl('search-article');?>">Rechercher</a>
             </li>
 
             <?php if(UserSession::isAuthenticated()):?>

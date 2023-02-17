@@ -19,7 +19,7 @@
 
         <main class="main">
 
-            <aside class="">
+            <aside class="aside">
                 <?php if (FlashBag::hasMessages('error')):?>
                     <?php foreach (FlashBag::fetchMessages('error') as $error):?>
                         <p class="Message Error-message"><?=$error;?></p>

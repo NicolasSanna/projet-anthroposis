@@ -160,7 +160,7 @@ class ArticleController extends AbstractController
         ]);
     }
 
-    public function usersArticles()
+    public function usersArticles(): string
     {
         $pageTitle = 'Gérer les articles des utilisateurs';
 
@@ -173,7 +173,7 @@ class ArticleController extends AbstractController
         ]);
     }
 
-    public function check()
+    public function check(): string
     {
         $pageTitle = 'Gérer l\'article';
         
@@ -195,7 +195,7 @@ class ArticleController extends AbstractController
         ]);
     }
 
-    public function approbe()
+    public function approbe(): mixed
     {
         $articleSlug = Get::key('article');
 

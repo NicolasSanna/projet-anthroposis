@@ -235,6 +235,10 @@
   font-size: 20px;
 }
 
+.Page-title {
+  text-align: center;
+}
+
 .Form {
   width: 60%;
   margin: 20px 0px;

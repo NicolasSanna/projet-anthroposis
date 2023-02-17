@@ -126,6 +126,24 @@ $routes = [
         'method' => 'approbe'
     ],
 
+    'search-article' => [
+        'path' => '/rechercher',
+        'controller' => 'ArticleController',
+        'method' => 'searchArticle'
+    ],
+
+    'article' => [
+        'path' => '/article',
+        'controller' => 'ArticleController',
+        'method' => 'read'
+    ],
+
+    'category' => [
+        'path' => '/categorie',
+        'controller' => 'ArticleController',
+        'method' => 'getAllArticlesByCategory'
+    ],
+
     '404' => [
         'path' => '/404',
         'controller' => 'HomeController',

@@ -24,7 +24,7 @@ class UserController extends AbstractController
         ]);
     }
 
-    public function updateToAuthor()
+    public function updateToAuthor(): mixed
     {
         $userId = (int) Get::key('id');
         $getToken = Get::key('token');
@@ -41,7 +41,7 @@ class UserController extends AbstractController
         return $this->redirect('users');
     }
 
-    public function updateToNewUser()
+    public function updateToNewUser(): mixed
     {
         $userId = (int) Get::key('id');
         $getToken = Get::key('token');

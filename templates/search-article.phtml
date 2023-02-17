@@ -1,0 +1,11 @@
+<div class="Page">
+    <h3 class="Page-title">Rechercher un article</h3>
+    <form action="<?=buildUrl('search-article');?>" method="post" class="Form">
+        <div class="Form-component">
+            <input class="Form-component-input" type="text" name="search" value="" placeholder="Rechercher un article" maxlength="50" required>
+        </div>
+        <input type="submit" class="Form-button" value="Rechercher">
+    </form>
+</div>
+
+<script src="<?=asset('js/article/SearchArticleManager.js');?>"></script>
