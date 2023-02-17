@@ -72,7 +72,7 @@
             transform:translateX(-200%);
             position:fixed;
             margin-top: -10px;
-            width:92%;   
+            width:86%;   
             height:100%;     
 
             &-cross
@@ -332,6 +332,76 @@
     &-title
     {
         text-align: center;
+    }
+
+    &-articles
+    {
+        margin-left:10%;
+        margin-right:10%;
+
+        &-article
+        {
+            margin-top:20px;
+            margin-bottom:20px;
+
+            &-title
+            {
+                margin-top:15px;
+                margin-bottom:15px;
+                font-family: 'Baskerville';
+                font-weight: lighter;
+                font-size: 20px;
+                line-height: 35px;
+            }
+
+            &-link
+            {
+                display:block;
+                text-decoration:none;
+                color:black;
+                transition-duration:1s;
+                margin-top:15px;
+                margin-bottom:15px;
+                font-family: 'Baskerville';
+                font-weight: lighter;
+                font-size: 20px;
+                line-height: 35px;
+
+                &:hover
+                {
+                    color:#917237;
+                    transition-duration:1s;
+                }
+            }
+
+            &-author
+            {
+                margin-top:10px;
+                margin-bottom:10px;
+            }
+
+            &-date
+            {
+                margin-top:10px;
+                margin-bottom:10px;
+            }
+
+            &-description
+            {
+                line-height: 25px;
+            }
+
+            &-category
+            {
+                margin-top:15px;
+                margin-bottom:15px;
+                &-link
+                {
+                    text-decoration:none;
+                    color:#917237;
+                }
+            }
+        }
     }
 }
 
@@ -600,14 +670,33 @@
 
                 &-link
                 {
-                    // display:block;
                     color:white;
                 }
 
-                // &-icon
-                // {
-                //     display:none;
-                // }
+            }
+        }
+    }
+
+    .Page
+    {
+        &-articles
+        {
+            // display:flex;
+            // flex-direction: row;
+            // justify-content: space-evenly;
+            // flex-wrap: wrap;
+            
+            display:grid;
+            grid-template-columns: 500px 500px;
+            justify-content: space-evenly;
+
+            &-article
+            {
+                margin-top:0px;
+                margin-bottom:0px;
+                margin-left:20px;
+                margin-right:20px;
+                // width: 450px;
             }
         }
     }

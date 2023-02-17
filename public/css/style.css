@@ -51,7 +51,7 @@
   transform: translateX(-200%);
   position: fixed;
   margin-top: -10px;
-  width: 92%;
+  width: 86%;
   height: 100%;
 }
 .Header-Navbar-menu-cross {
@@ -237,6 +237,57 @@
 
 .Page-title {
   text-align: center;
+}
+.Page-articles {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.Page-articles-article {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.Page-articles-article-title {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-family: "Baskerville";
+  font-weight: lighter;
+  font-size: 20px;
+  line-height: 35px;
+}
+.Page-articles-article-link {
+  display: block;
+  text-decoration: none;
+  color: black;
+  transition-duration: 1s;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-family: "Baskerville";
+  font-weight: lighter;
+  font-size: 20px;
+  line-height: 35px;
+}
+.Page-articles-article-link:hover {
+  color: #917237;
+  transition-duration: 1s;
+}
+.Page-articles-article-author {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.Page-articles-article-date {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.Page-articles-article-description {
+  line-height: 25px;
+}
+.Page-articles-article-category {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.Page-articles-article-category-link {
+  text-decoration: none;
+  color: #917237;
 }
 
 .Form {
@@ -434,6 +485,17 @@
   }
   .MenuAdmin-list-item-link {
     color: white;
+  }
+  .Page-articles {
+    display: grid;
+    grid-template-columns: 500px 500px;
+    justify-content: space-evenly;
+  }
+  .Page-articles-article {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 }
 @keyframes fadeInFromNone {

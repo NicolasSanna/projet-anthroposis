@@ -21,8 +21,8 @@ class ArticleController extends AbstractController
 
             foreach ($results as $index => $result)
             {
-                $results[$index]->articleUrl = SITE_BASE_URL .buildUrl('article', ['slug' => $result->article_slug]);
-                $results[$index]->categoryUrl = SITE_BASE_URL .buildUrl('category', ['slug' => $result->category_slug]);
+                $results[$index]->articleUrl = SITE_BASE_URL . buildUrl('article', ['article' => $result->article_slug]);
+                $results[$index]->categoryUrl = SITE_BASE_URL . buildUrl('category', ['categorie' => $result->category_slug]);
             }
 
             return json_encode($results);
