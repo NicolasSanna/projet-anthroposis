@@ -36,7 +36,7 @@ $routes = [
         'method' => 'dashboard'
     ],
     
-    'articles' => [
+    'admin-articles' => [
         'path' => '/admin/auteur/mes-articles',
         'controller' => 'Admin\\Article\\ArticleController',
         'method' => 'articles'
@@ -66,7 +66,7 @@ $routes = [
         'method' => 'new'
     ],
 
-    'categories' => [
+    'admin-categories' => [
         'path' => '/admin/administrateur/categories',
         'controller' => 'Admin\\Category\\CategoryController',
         'method' => 'categories'
@@ -135,7 +135,13 @@ $routes = [
     'article' => [
         'path' => '/article',
         'controller' => 'ArticleController',
-        'method' => 'read'
+        'method' => 'getOne'
+    ],
+
+    'categories' => [
+        'path' => '/categories',
+        'controller' => 'CategoryController',
+        'method' => 'getAll'
     ],
 
     'category' => [

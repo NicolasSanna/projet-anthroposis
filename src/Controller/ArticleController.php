@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Framework\AbstractController;
+use App\Framework\Get;
 use App\Framework\Post;
 use App\Model\ArticleModel;
 
@@ -30,6 +31,26 @@ class ArticleController extends AbstractController
 
         return $this->render('search-article', [
             'pageTitle' => $pageTitle
+        ]);
+    }
+
+    public function getOne(): string
+    {
+        $articleSlug = Get::key('article');
+
+        $articleModel = new ArticleModel();
+        $article = $articleModel->findOneBySlug($articleSlug);
+
+        if(!$article)
+        {
+            return $this->redirect('404');
+        }
+
+        $pageTitle = $article->title;
+
+        return $this->render('article', [
+            'pageTitle' => $pageTitle,
+            'article' => $article
         ]);
     }
 }

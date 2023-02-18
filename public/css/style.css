@@ -158,7 +158,7 @@
   margin-top: 20px;
 }
 .Admin-boxImg-img {
-  width: 300px;
+  width: 60%;
 }
 .Admin-delete {
   color: #db3535;
@@ -389,10 +389,19 @@
   font-family: "Baskerville";
   font-size: 24px;
   margin: 20px 0px;
+  font-weight: lighter;
 }
 .Article-description {
   font-weight: bold;
   margin: 20px 0px;
+}
+.Article-category {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.Article-category-link {
+  text-decoration: none;
+  color: #917237;
 }
 .Article-boxImg {
   margin-top: 20px;

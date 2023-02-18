@@ -216,7 +216,7 @@
 
         &-img
         {
-            width:300px;
+            width:60%;
         }
     }
 
@@ -533,12 +533,25 @@
         font-family: 'Baskerville';
         font-size:24px;
         margin:20px 0px;
+        font-weight: lighter;
     }
 
     &-description
     {
         font-weight: bold;
         margin:20px 0px;
+    }
+
+    &-category
+    {
+        margin-top:15px;
+        margin-bottom:15px;
+
+        &-link
+        {
+            text-decoration:none;
+            color:#917237;
+        }
     }
 
     &-boxImg

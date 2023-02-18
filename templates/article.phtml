@@ -1,0 +1,13 @@
+<article class="Article">
+    <p class="Article-author"><?=$article->pseudo;?> - <?=$article->date_fr;?></p>
+    <p class="Article-title"><?=$article->title;?></p>
+    <p class="Article-description"><?=$article->description;?></p>
+    <p class="Article-category"><a class="Article-category-link" href="<?=buildUrl('category', ['categorie' => $article->category_slug]);?>"><?=$article->category_name;?></a></p>
+    <?php if(!empty($article->image)):?>
+        <div class="Article-boxImg">
+            <img class="Article-boxImg-img" src="<?=asset('img/imgArticle' . '/' . $article->image );?>" alt="">
+        </div>
+    <?php endif;?>
+    <p class="Article-content"><?=$article->content;?></p>
+    <hr class="Article-hr">
+</article>
