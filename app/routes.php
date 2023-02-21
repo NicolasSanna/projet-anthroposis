@@ -5,12 +5,15 @@
  */
 $routes = [
 
-    // Route de la page d'accueil
+    // PAGE D'ACCUEIL
+    
     'home' => [
         'path' => '/',
         'controller' => 'HomeController',
         'method' => 'index'
     ],
+
+    // AUTHENTIFICATION
 
     'signup' => [
         'path' => '/inscription',
@@ -30,11 +33,15 @@ $routes = [
         'method' => 'logout'
     ],
 
+    // TABLEAU DE BORD
+
     'dashboard' => [
         'path' => '/admin/tableau-de-bord',
         'controller' => 'Admin\\AdminController',
         'method' => 'dashboard'
     ],
+
+    // ADMINISTRATION DES ARTICLES
     
     'admin-articles' => [
         'path' => '/admin/auteur/mes-articles',
@@ -59,6 +66,8 @@ $routes = [
         'controller' => 'Admin\\Article\\ArticleController',
         'method' => 'update'
     ],
+
+    // ADMINISTRATION DES CATÉGORIES
 
     'new-category' => [
         'path' => '/admin/administrateur/ajouter-une-categorie',
@@ -90,6 +99,8 @@ $routes = [
         'method' => 'update'
     ],
 
+    // ADMINISTRATION DES UTILISATEURS
+
     'users' => [
         'path' => '/admin/administrateur/utilisateurs',
         'controller' => 'Admin\\User\\UserController',
@@ -111,7 +122,7 @@ $routes = [
     'manage-articles-users' => [
         'path' => '/admin/administrateur/gerer-articles-utilisateurs',
         'controller' => 'Admin\\Article\\ArticleController',
-        'method' => 'usersArticles'
+        'method' => 'articlesUsers'
     ],
 
     'check-article' => [
@@ -126,11 +137,15 @@ $routes = [
         'method' => 'approbe'
     ],
 
+    // RECHERCHER UN ARTICLE
+
     'search-article' => [
         'path' => '/rechercher',
         'controller' => 'ArticleController',
         'method' => 'searchArticle'
     ],
+
+    // AFFICAGE D'UN ARTICLE 
 
     'article' => [
         'path' => '/article',
@@ -138,11 +153,15 @@ $routes = [
         'method' => 'getOne'
     ],
 
+    // AFFICHAGE DES CATÉGORIES
+
     'categories' => [
         'path' => '/categories',
         'controller' => 'CategoryController',
         'method' => 'getAll'
     ],
+
+    // AFFICHAGE D'UNE CATÉGORIE
 
     'category' => [
         'path' => '/categorie',
@@ -150,17 +169,24 @@ $routes = [
         'method' => 'getAllByCategory'
     ],
 
+    // AFFICHAGE DES ARTICLES
+
     'articles' => [
         'path' => '/articles',
         'controller' => 'ArticleController',
         'method' => 'getAll'
     ],
 
+    // PAGE 404
+
     '404' => [
         'path' => '/404',
         'controller' => 'HomeController',
         'method' => 'notFound'
     ],
+
+    // PAGE 403
+
     '403' => [
         'path' => '/403',
         'controller' => 'HomeController',

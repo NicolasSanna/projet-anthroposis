@@ -69,12 +69,13 @@ class ArticleController extends AbstractController
         ]);
     }
 
-    public function getAllByCategory()
+    public function getAllByCategory(): string
     {
         $categorySlug = Get::key('categorie');
 
         $categoryModel = new ArticleModel();
         $articles = $categoryModel->findAllByCategory($categorySlug);
+        
         if(!$articles)
         {
             FlashBag::addFlash('Aucun article n\'existe pour le moment dans cette catégorie', 'error');

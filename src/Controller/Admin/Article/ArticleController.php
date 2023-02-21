@@ -160,7 +160,7 @@ class ArticleController extends AbstractController
         ]);
     }
 
-    public function usersArticles(): string
+    public function articlesUsers(): string
     {
         $pageTitle = 'Gérer les articles des utilisateurs';
 

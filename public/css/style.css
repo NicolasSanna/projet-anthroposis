@@ -152,6 +152,7 @@
 }
 .Admin-title {
   text-align: center;
+  margin-bottom: 10px;
 }
 .Admin-boxImg {
   text-align: center;
@@ -237,6 +238,8 @@
 
 .Page-title {
   text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .Page-articles {
   margin-left: 10%;
@@ -475,7 +478,7 @@
   height: 300px;
 }
 
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 1200px) {
   .Header {
     align-items: center;
   }
@@ -525,16 +528,22 @@
   .MenuAdmin-list-item-link {
     color: white;
   }
+  .Page {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
   .Page-articles {
-    display: grid;
-    grid-template-columns: 500px 500px;
-    justify-content: space-evenly;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
   .Page-articles-article {
     margin-top: 0px;
     margin-bottom: 0px;
     margin-left: 20px;
     margin-right: 20px;
+    width: 400px;
   }
   .Page-categories {
     flex-direction: row;

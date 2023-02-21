@@ -207,6 +207,7 @@
     &-title
     {
         text-align: center;
+        margin-bottom:10px;
     }
 
     &-boxImg
@@ -332,6 +333,8 @@
     &-title
     {
         text-align: center;
+        margin-top:10px;
+        margin-bottom:10px;
     }
 
     &-articles
@@ -656,7 +659,7 @@
     height:300px;
 }
 
-@media screen AND (min-width: 1100px)
+@media screen AND (min-width: 1200px)
 {
     .Header
     {
@@ -738,12 +741,16 @@
 
     .Page
     {
+        margin-left:2%;
+        margin-right:2%;
+
         &-articles
         {
      
-            display:grid;
-            grid-template-columns: 500px 500px;
-            justify-content: space-evenly;
+            display:flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
 
             &-article
             {
@@ -751,6 +758,7 @@
                 margin-bottom:0px;
                 margin-left:20px;
                 margin-right:20px;
+                width:400px;
             }
         }
 
