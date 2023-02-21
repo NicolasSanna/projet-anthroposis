@@ -127,4 +127,27 @@ class ArticleModel extends AbstractModel
 
         return $results;
     }
+
+    public function findAll(): array
+    {
+        $sql = 'CALL SP_ArticleAllSelect(:statusId)';
+
+        $results = $this->database->getAllResults($sql, [
+            'statusId' => self::STATUS_APPROVED
+        ]);
+
+        return $results;
+    }
+
+    public function findAllByCategory(string $categorySlug): array
+    {
+        $sql = 'CALL SP_ArticlesAllByCategorySelect(:categorySlug, :statusId)';
+
+        $results = $this->database->getAllResults($sql, [
+            'categorySlug' => $categorySlug,
+            'statusId' => self::STATUS_APPROVED
+        ]); 
+
+        return $results;
+    }
 }

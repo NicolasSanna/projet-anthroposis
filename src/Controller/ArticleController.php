@@ -3,9 +3,11 @@
 namespace App\Controller;
 
 use App\Framework\AbstractController;
+use App\Framework\FlashBag;
 use App\Framework\Get;
 use App\Framework\Post;
 use App\Model\ArticleModel;
+use App\Model\CategoryModel;
 
 class ArticleController extends AbstractController
 {
@@ -51,6 +53,41 @@ class ArticleController extends AbstractController
         return $this->render('article', [
             'pageTitle' => $pageTitle,
             'article' => $article
+        ]);
+    }
+
+    public function getAll(): string
+    {
+        $pageTitle = 'Tous les articles';
+
+        $articleModel = new ArticleModel();
+        $articles = $articleModel->findAll();
+
+        return $this->render('articles', [
+            'pageTitle' => $pageTitle,
+            'articles' => $articles
+        ]);
+    }
+
+    public function getAllByCategory()
+    {
+        $categorySlug = Get::key('categorie');
+
+        $categoryModel = new ArticleModel();
+        $articles = $categoryModel->findAllByCategory($categorySlug);
+        if(!$articles)
+        {
+            FlashBag::addFlash('Aucun article n\'existe pour le moment dans cette catégorie', 'error');
+            return $this->redirect('categories');
+        }
+
+        $categoryName = $articles[0]->category_name;
+        $pageTitle = 'Articles de la catégorie ' . $categoryName;
+
+        return $this->render('category', [
+            'pageTitle' => $pageTitle,
+            'articles' => $articles,
+            'categoryName' => $categoryName
         ]);
     }
 }

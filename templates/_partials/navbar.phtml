@@ -5,7 +5,10 @@
         <span class="Header-Navbar-menu-cross" id="cross">✖</span>
         <ul class="Header-Navbar-menu-list">
             <li class="Header-Navbar-menu-list-item">
-                <a class="Header-Navbar-menu-list-item-link" href="">Articles</a>
+                <a class="Header-Navbar-menu-list-item-link" href="<?=buildUrl('articles');?>">Articles</a>
+            </li>
+            <li class="Header-Navbar-menu-list-item">
+                <a class="Header-Navbar-menu-list-item-link" href="<?=buildUrl('categories');?>">Catégories</a>
             </li>
             <li class="Header-Navbar-menu-list-item">
                 <a class="Header-Navbar-menu-list-item-link" href="<?=buildUrl('search-article');?>">Rechercher</a>
@@ -17,7 +20,7 @@
                     <a class="Header-Navbar-menu-list-item-link" href="<?=buildUrl('dashboard');?>">Administration</a>
                 </li>
                 <li class="Header-Navbar-menu-list-item">
-                    <a class="Header-Navbar-menu-list-item-link" href="<?=buildUrl('dashboard');?>">Bonjour <?=UserSession::getFullname();?></a>
+                    <a class="Header-Navbar-menu-list-item-link" href="<?=buildUrl('dashboard');?>"><?=UserSession::getFullname();?></a>
                 </li>
                 <li class="Header-Navbar-menu-list-item">
                     <a class="Header-Navbar-menu-list-item-link" href="<?=buildUrl('logout');?>">Déconnexion</a>

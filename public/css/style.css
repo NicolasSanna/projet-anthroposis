@@ -289,6 +289,36 @@
   text-decoration: none;
   color: #917237;
 }
+.Page-categories {
+  margin-left: 10%;
+  margin-right: 10%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.Page-categories-category-title {
+  font-family: "Baskerville";
+  font-weight: lighter;
+  font-size: 20px;
+  line-height: 35px;
+}
+.Page-categories-category-title-link {
+  display: block;
+  text-decoration: none;
+  color: black;
+  transition-duration: 1s;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-family: "Baskerville";
+  font-weight: lighter;
+  font-size: 20px;
+  line-height: 35px;
+}
+.Page-categories-category-title-link:hover {
+  color: #917237;
+  transition-duration: 1s;
+}
 
 .Form {
   width: 60%;
@@ -505,6 +535,15 @@
     margin-bottom: 0px;
     margin-left: 20px;
     margin-right: 20px;
+  }
+  .Page-categories {
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  .Page-categories-category-title-link {
+    width: 450px;
+    text-align: center;
   }
 }
 @keyframes fadeInFromNone {

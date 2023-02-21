@@ -1,0 +1,17 @@
+<div class="Page">
+    <h2 class="Page-title">Catégories</h2>
+
+    <div class="Page-categories">
+        <div class="Page-categories-category">
+            <h3 class="Page-categories-category-title"><a class="Page-categories-category-title-link" href="<?=buildUrl('category', ['categorie' => 'non-classe']);?>">Non classé</a></h3>
+        </div>
+
+        <?php foreach ($categories as $category):?>
+
+            <div class="Page-categories-category">
+                <h3 class="Page-categories-category-title"><a  class="Page-categories-category-title-link" href="<?=buildUrl('category', ['categorie' => $category->slug]);?>"><?=$category->category_name;?></a></h3>
+            </div>
+
+        <?php endforeach;?>
+    </div>
+</div>

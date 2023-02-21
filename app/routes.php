@@ -147,7 +147,13 @@ $routes = [
     'category' => [
         'path' => '/categorie',
         'controller' => 'ArticleController',
-        'method' => 'getAllArticlesByCategory'
+        'method' => 'getAllByCategory'
+    ],
+
+    'articles' => [
+        'path' => '/articles',
+        'controller' => 'ArticleController',
+        'method' => 'getAll'
     ],
 
     '404' => [

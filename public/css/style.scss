@@ -403,6 +403,51 @@
             }
         }
     }
+
+    &-categories
+    {
+        margin-left:10%;
+        margin-right:10%;
+
+        display:flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+
+        &-category
+        {
+            &-title
+            {
+
+                font-family: 'Baskerville';
+                font-weight: lighter;
+                font-size: 20px;
+                line-height: 35px;
+
+                &-link
+                {
+                    display:block;
+                    text-decoration:none;
+                    color:black;
+                    transition-duration:1s;
+                    margin-top:5px;
+                    margin-bottom:5px;
+                    font-family: 'Baskerville';
+                    font-weight: lighter;
+                    font-size: 20px;
+                    line-height: 35px;
+    
+                    &:hover
+                    {
+                        color:#917237;
+                        transition-duration:1s;
+                    }
+                }
+            }
+            
+
+        }
+    }
 }
 
 .Form
@@ -546,6 +591,7 @@
     {
         margin-top:15px;
         margin-bottom:15px;
+        
 
         &-link
         {
@@ -694,11 +740,7 @@
     {
         &-articles
         {
-            // display:flex;
-            // flex-direction: row;
-            // justify-content: space-evenly;
-            // flex-wrap: wrap;
-            
+     
             display:grid;
             grid-template-columns: 500px 500px;
             justify-content: space-evenly;
@@ -709,7 +751,25 @@
                 margin-bottom:0px;
                 margin-left:20px;
                 margin-right:20px;
-                // width: 450px;
+            }
+        }
+
+        &-categories
+        {
+            flex-direction: row;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+
+            &-category
+            {
+                &-title
+                {
+                    &-link
+                    {
+                        width: 450px;
+                        text-align: center;
+                    }
+                }
             }
         }
     }
