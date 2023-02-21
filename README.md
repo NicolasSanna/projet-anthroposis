@@ -37,7 +37,7 @@ L’objectif du projet est de pouvoir déployer et publier sur une application w
 - Une page pour créer un compte utilisateur et un lien de déconnexion placé au niveau du menu visible pour l’utilisateur connecté.
 - Une page de connexion (formulaire).
 
-### Langages utilisés
+## Langages utilisés
 
 - PHP 8.1
 - MySQL 8.x
@@ -47,7 +47,7 @@ L’objectif du projet est de pouvoir déployer et publier sur une application w
 
 Pour la robustesse du code et sa maintenabilité à terme, j’ai choisi de me servir du paradigme de programmation MVC et de l'Orienté Objet.
 
-### Technologies utilisées
+## Technologies utilisées
 
 - Maquettage et prototypage : Figma
 - Environnement de développement (IDE) : VIsual Studio Code
