@@ -86,7 +86,7 @@ class Server
         }
 
         //  Si le path contient /api, mais que la  clé de la superglobale $_SERVER['HTTP_X_REQUESTED_WITH'] est vide ou bien différente de la chaîne de caractères xmlhttprequest...
-        if(str_contains(self::$path, '/api') && !empty( $_SERVER['HTTP_X_REQUESTED_WITH']) || strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) !== 'xmlhttprequest')
+        if(str_contains(self::$path, '/api') && empty($_SERVER['HTTP_X_REQUESTED_WITH']) || strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) !== 'xmlhttprequest')
         {
             // Alors on redéfinit le path vers la route 403.
             $url = buildUrl('403');

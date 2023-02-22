@@ -6,7 +6,7 @@
             <div class="Page-articles-article">
                 <p class="Page-articles-article-author"><?=$article->pseudo;?></p>
                 <p class="Page-articles-article-date"><?=$article->date_fr;?></p>
-                <h4 class="Page-articles-article-title"><a  class="Page-articles-article-link" href="<?=buildUrl('article', ['article' => $article->article_slug]);?>"><?=$article->title;?></a></h4>
+                <h3 class="Page-articles-article-title"><a  class="Page-articles-article-link" href="<?=buildUrl('article', ['article' => $article->article_slug]);?>"><?=$article->title;?></a></h3>
                 <p class="Page-articles-article-description"><?=$article->description;?></p>
                 <p class="Page-articles-article-category"><a class="Page-articles-article-category-link" href="<?=buildUrl('category', ['categorie' => $article->category_slug]);?>"><?=$article->category_name;?></a></p>
                 <hr>

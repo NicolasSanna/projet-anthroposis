@@ -23,7 +23,7 @@ BEGIN
             cat.slug = v_category_slug
         WHERE cat.idCat = v_category_id;
 
-        SET message = CONCAT ('La catégorie ', v_category, ' a bien été modifiée');
+        SET message = CONCAT('La catégorie ', v_category, ' a bien été modifiée');
 
     END IF;
 

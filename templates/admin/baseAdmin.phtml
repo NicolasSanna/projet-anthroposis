@@ -12,6 +12,8 @@
     <title><?=$pageTitle??'';?></title>
     <link rel="stylesheet" href="<?=asset('css/style.css');?>">
     <link rel="stylesheet" href="<?=asset('css/table.css');?>">
+    <script src="<?=asset('js/tinymce/js/tinymce/tinymce.min.js');?>" referrerpolicy="origin"></script>
+    <script>tinymce.init({selector:'#textarea', language : "fr_FR", width: 900});</script>
     
 </head>
     <body class="body">

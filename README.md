@@ -31,7 +31,7 @@ L’objectif du projet est de pouvoir déployer et publier sur une application w
   - Accéder à toutes les catégories ;
   - Rechercher un article ;
   - Accéder au back-office d’administration où sont présents les articles en lecture et en écritur en effectuant les quatre opérations du CRUD (*Create Read, Update, Delete*) pour l’utilisateur connecté ;
-  - Accéder à la gestion des utilisateurs, des catégories des commentaires et des articles (uniquement pour les administrateurs du site) ;
+  - Accéder à la gestion des utilisateurs, des catégories et des articles (uniquement pour les administrateurs du site) ;
   - Modifier ses informations personnelles (email, nom, prénom, pseudo) ;
 - Une page d’accueil avec une présentation des objectifs du site ainsi que la possibilité de consulter les quatre derniers articles publiés récemment.
 - Une page pour créer un compte utilisateur et un lien de déconnexion placé au niveau du menu visible pour l’utilisateur connecté.
@@ -42,7 +42,7 @@ L’objectif du projet est de pouvoir déployer et publier sur une application w
 - PHP 8.1
 - MySQL 8.x
 - HTML 5
-- CSS 3 (préproceseur SASS, SCSS)
+- CSS 3 (préprocesseur SASS, SCSS)
 - JavaScript
 
 Pour la robustesse du code et sa maintenabilité à terme, j’ai choisi de me servir du paradigme de programmation MVC et de l'Orienté Objet.

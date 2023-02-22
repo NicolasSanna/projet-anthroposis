@@ -7,7 +7,6 @@ use App\Framework\FlashBag;
 use App\Framework\Get;
 use App\Framework\Post;
 use App\Model\ArticleModel;
-use App\Model\CategoryModel;
 
 class ArticleController extends AbstractController
 {

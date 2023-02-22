@@ -5,13 +5,13 @@
     </div>
     <form action="<?=buildUrl('new-article');?>" method="post" class="Form" id="Form" enctype="multipart/form-data">
         <div class="Form-component">
-            <input class="Form-component-input" type="text" name="title" value="<?=$title;?>" placeholder="Titre" maxlength="100" required>
+            <input class="Form-component-input" type="text" name="title" value="<?=$title;?>" placeholder="Titre" maxlength="100" required >
         </div>
         <div class="Form-component">
-            <input class="Form-component-input" type="text" name="description" value="<?=$description;?>" placeholder="Description" maxlength="120" required>
+            <input class="Form-component-input" type="text" name="description" value="<?=$description;?>" placeholder="Description" maxlength="120" required >
         </div>
         <div class="Form-component">
-            <textarea class="Form-component-input" type="text" name="content" placeholder="Contenu" rows="10"required><?=$content;?></textarea>
+            <textarea class="Form-component-input" id="textarea" type="text" name="content" placeholder="Contenu" rows="10"><?=$content;?></textarea>
         </div>
         <div class="Form-component">
             <select name="selectCategory" class="Form-component-select">

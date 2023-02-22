@@ -28,7 +28,7 @@ class ArticleController extends AbstractController
 
             $title = $post['title'];
             $description = $post['description'];
-            $content = $post['content'];
+            $content = str_contains($_POST['content'], '<script>') ? trim(htmlspecialchars($_POST['content'])) : trim($_POST['content']) ;
             $selectedCategory = (int) $post['selectCategory'];
             $checkToken = $post['checkToken'];
             $image = $_FILES['image'];
@@ -115,7 +115,7 @@ class ArticleController extends AbstractController
 
             $title = $post['title'];
             $description = $post['description'];
-            $content = $post['content'];
+            $content = str_contains($_POST['content'], '<script>') ? trim(htmlspecialchars($_POST['content'])) : trim($_POST['content']) ;
             $selectedCategory = (int) $post['selectCategory'];
             $checkToken = $post['checkToken'];
             $image = $_FILES['image'];

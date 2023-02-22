@@ -28,7 +28,6 @@ class Router
         // On parcours le tableau de routes stocké dans la propriété 'routes' de l'objet courant ($this)
         foreach ($this->routes as $route) 
         {
-
             // Si le chemin de la route correspond à celui que l'on cherche... 
             if ($path === $route['path']) 
             {
