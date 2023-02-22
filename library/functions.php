@@ -53,7 +53,7 @@ function slugify (string $string, string $delimiter = '-'): string
  */
 function verifyContent(string $string): string
 {
-    $secureString = trim(htmlspecialchars($string));
+    $secureString = trim(htmlspecialchars($string, ENT_NOQUOTES | ENT_SUBSTITUTE, 'UTF-8'));
 
     return $secureString;
 }

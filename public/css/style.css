@@ -1,12 +1,53 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "Century Gothic";
-}
-
 @font-face {
   font-family: "Baskerville";
   src: url("../fonts/LibreBaskerville-Regular.ttf") format("truetype");
+}
+table {
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #917237;
+}
+
+td {
+  padding: 10px 10px;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #ccc;
+}
+
+table thead tr {
+  background-color: #917237;
+  color: white;
+}
+
+table thead th {
+  padding: 10px 10px;
+}
+
+@media screen and (max-width: 1300px) {
+  td {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  table {
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  thead tr {
+    display: flex;
+    flex-direction: column;
+  }
+  table thead tr {
+    height: -moz-fit-content;
+    height: fit-content;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
 }
 .Header {
   display: flex;
@@ -17,7 +58,7 @@
   background-color: white;
   padding-top: 10px;
   margin-top: -80px;
-  z-index: 1;
+  z-index: 2;
 }
 .Header-img {
   width: 70px;
@@ -83,6 +124,318 @@
 .Header-Navbar-menu-list-item-link:hover {
   color: #917237;
   transition-duration: 1s;
+}
+
+@media screen and (min-width: 1200px) {
+  .Header {
+    align-items: center;
+  }
+  .Header-h1 {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 25px;
+  }
+  .Header-h1-link {
+    font-size: 24px;
+  }
+  .Header-img {
+    margin-left: 5%;
+  }
+  .Header-Navbar {
+    width: 100%;
+  }
+  .Header-Navbar-burger {
+    display: none;
+  }
+  .Header-Navbar-menu {
+    position: relative;
+    transform: translateX(0%);
+  }
+  .Header-Navbar-menu-list {
+    flex-direction: row;
+  }
+  .Header-Navbar-menu-cross {
+    display: none;
+  }
+}
+.Footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+  height: 300px;
+}
+
+.Article {
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 10%;
+}
+.Article-title {
+  font-family: "Baskerville";
+  font-size: 24px;
+  margin: 20px 0px;
+  font-weight: lighter;
+}
+.Article-description {
+  font-weight: bold;
+  margin: 20px 0px;
+}
+.Article-category {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.Article-category-link {
+  text-decoration: none;
+  color: #917237;
+}
+.Article-boxImg {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.Article-boxImg-img {
+  width: 100%;
+}
+.Article-content {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.Article-hr {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.Article-button {
+  background-color: #917237;
+  border: none;
+  color: white;
+  padding: 12px 32px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.5s;
+  border: 3px solid #917237;
+  margin: 8px 0px;
+}
+.Article-button:hover {
+  background-color: white;
+  color: #917237;
+}
+
+.Form {
+  width: 60%;
+  margin: 20px 0px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.Form-component {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.Form-component-file {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+.Form-component-file-buttonImg {
+  padding: 12px 32px;
+  margin: 8px 0px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #917237;
+  color: white;
+  border: none;
+}
+.Form-component-file input[type=file] {
+  left: 0;
+  top: 0;
+  opacity: 0;
+  position: absolute;
+  cursor: pointer;
+}
+.Form-component-input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  transition: 0.5s;
+  outline: none;
+}
+.Form-component-input:focus {
+  border: 3px solid #917237;
+}
+.Form-component-button {
+  background-color: #917237;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.5s;
+  border: 3px solid #917237;
+  padding: 12px 20px;
+  margin: 8px 0;
+}
+.Form-component-button:hover {
+  background-color: white;
+  color: #917237;
+}
+.Form-component-select {
+  padding: 12px 20px;
+  background-color: #917237;
+  color: white;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  outline: none;
+}
+.Form-component-select-option {
+  background-color: #917237;
+  color: white;
+}
+.Form-button {
+  background-color: #917237;
+  border: none;
+  color: white;
+  padding: 12px 32px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.5s;
+  border: 3px solid #917237;
+  margin: 8px 0px;
+}
+.Form-button:hover {
+  background-color: white;
+  color: #917237;
+}
+
+#FormArticle {
+  width: 80%;
+}
+
+.Page-title {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.Page-articles {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.Page-articles-article {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.Page-articles-article-title {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-family: "Baskerville";
+  font-weight: lighter;
+  font-size: 20px;
+  line-height: 35px;
+}
+.Page-articles-article-link {
+  display: block;
+  text-decoration: none;
+  color: black;
+  transition-duration: 1s;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-family: "Baskerville";
+  font-weight: lighter;
+  font-size: 20px;
+  line-height: 35px;
+}
+.Page-articles-article-link:hover {
+  color: #917237;
+  transition-duration: 1s;
+}
+.Page-articles-article-author {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.Page-articles-article-date {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.Page-articles-article-description {
+  line-height: 25px;
+}
+.Page-articles-article-category {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.Page-articles-article-category-link {
+  text-decoration: none;
+  color: #917237;
+}
+.Page-categories {
+  margin-left: 10%;
+  margin-right: 10%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.Page-categories-category-title {
+  font-family: "Baskerville";
+  font-weight: lighter;
+  font-size: 20px;
+  line-height: 35px;
+}
+.Page-categories-category-title-link {
+  display: block;
+  text-decoration: none;
+  color: black;
+  transition-duration: 1s;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-family: "Baskerville";
+  font-weight: lighter;
+  font-size: 20px;
+  line-height: 35px;
+}
+.Page-categories-category-title-link:hover {
+  color: #917237;
+  transition-duration: 1s;
+}
+
+@media screen and (min-width: 1200px) {
+  .Page {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+  .Page-articles {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .Page-articles-article {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 400px;
+  }
+  .Page-categories {
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  .Page-categories-category-title-link {
+    width: 450px;
+    text-align: center;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Century Gothic";
 }
 
 .main {
@@ -236,279 +589,7 @@
   font-size: 20px;
 }
 
-.Page-title {
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.Page-articles {
-  margin-left: 10%;
-  margin-right: 10%;
-}
-.Page-articles-article {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-.Page-articles-article-title {
-  margin-top: 15px;
-  margin-bottom: 15px;
-  font-family: "Baskerville";
-  font-weight: lighter;
-  font-size: 20px;
-  line-height: 35px;
-}
-.Page-articles-article-link {
-  display: block;
-  text-decoration: none;
-  color: black;
-  transition-duration: 1s;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  font-family: "Baskerville";
-  font-weight: lighter;
-  font-size: 20px;
-  line-height: 35px;
-}
-.Page-articles-article-link:hover {
-  color: #917237;
-  transition-duration: 1s;
-}
-.Page-articles-article-author {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.Page-articles-article-date {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.Page-articles-article-description {
-  line-height: 25px;
-}
-.Page-articles-article-category {
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-.Page-articles-article-category-link {
-  text-decoration: none;
-  color: #917237;
-}
-.Page-categories {
-  margin-left: 10%;
-  margin-right: 10%;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-}
-.Page-categories-category-title {
-  font-family: "Baskerville";
-  font-weight: lighter;
-  font-size: 20px;
-  line-height: 35px;
-}
-.Page-categories-category-title-link {
-  display: block;
-  text-decoration: none;
-  color: black;
-  transition-duration: 1s;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-family: "Baskerville";
-  font-weight: lighter;
-  font-size: 20px;
-  line-height: 35px;
-}
-.Page-categories-category-title-link:hover {
-  color: #917237;
-  transition-duration: 1s;
-}
-
-.Form {
-  width: 60%;
-  margin: 20px 0px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.Form-component {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.Form-component-file {
-  display: inline-block;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  outline: none;
-  border: none;
-}
-.Form-component-file-buttonImg {
-  padding: 12px 32px;
-  margin: 8px 0px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #917237;
-  color: white;
-  border: none;
-}
-.Form-component-file input[type=file] {
-  left: 0;
-  top: 0;
-  opacity: 0;
-  position: absolute;
-  cursor: pointer;
-}
-.Form-component-input {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 3px solid #ccc;
-  transition: 0.5s;
-  outline: none;
-}
-.Form-component-input:focus {
-  border: 3px solid #917237;
-}
-.Form-component-button {
-  background-color: #917237;
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
-  transition: 0.5s;
-  border: 3px solid #917237;
-  padding: 12px 20px;
-  margin: 8px 0;
-}
-.Form-component-button:hover {
-  background-color: white;
-  color: #917237;
-}
-.Form-component-select {
-  padding: 12px 20px;
-  background-color: #917237;
-  color: white;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  outline: none;
-}
-.Form-component-select-option {
-  background-color: #917237;
-  color: white;
-}
-.Form-button {
-  background-color: #917237;
-  border: none;
-  color: white;
-  padding: 12px 32px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: 0.5s;
-  border: 3px solid #917237;
-  margin: 8px 0px;
-}
-.Form-button:hover {
-  background-color: white;
-  color: #917237;
-}
-
-.Article {
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-bottom: 10%;
-}
-.Article-title {
-  font-family: "Baskerville";
-  font-size: 24px;
-  margin: 20px 0px;
-  font-weight: lighter;
-}
-.Article-description {
-  font-weight: bold;
-  margin: 20px 0px;
-}
-.Article-category {
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-.Article-category-link {
-  text-decoration: none;
-  color: #917237;
-}
-.Article-boxImg {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-.Article-boxImg-img {
-  width: 100%;
-}
-.Article-content {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-.Article-hr {
-  margin-top: 20px;
-  margin-bottom: 40px;
-}
-.Article-button {
-  background-color: #917237;
-  border: none;
-  color: white;
-  padding: 12px 32px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: 0.5s;
-  border: 3px solid #917237;
-  margin: 8px 0px;
-}
-.Article-button:hover {
-  background-color: white;
-  color: #917237;
-}
-
-.Footer {
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: black;
-  color: white;
-  text-align: center;
-  height: 300px;
-}
-
 @media screen and (min-width: 1200px) {
-  .Header {
-    align-items: center;
-  }
-  .Header-h1 {
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-bottom: 25px;
-  }
-  .Header-h1-link {
-    font-size: 24px;
-  }
-  .Header-img {
-    margin-left: 5%;
-  }
-  .Header-Navbar {
-    width: 100%;
-  }
-  .Header-Navbar-burger {
-    display: none;
-  }
-  .Header-Navbar-menu {
-    position: relative;
-    transform: translateX(0%);
-  }
-  .Header-Navbar-menu-list {
-    flex-direction: row;
-  }
-  .Header-Navbar-menu-cross {
-    display: none;
-  }
   .MenuAdmin {
     position: relative;
     min-width: 300px;
@@ -527,32 +608,6 @@
   }
   .MenuAdmin-list-item-link {
     color: white;
-  }
-  .Page {
-    margin-left: 2%;
-    margin-right: 2%;
-  }
-  .Page-articles {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  .Page-articles-article {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-left: 20px;
-    margin-right: 20px;
-    width: 400px;
-  }
-  .Page-categories {
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-  }
-  .Page-categories-category-title-link {
-    width: 450px;
-    text-align: center;
   }
 }
 @keyframes fadeInFromNone {

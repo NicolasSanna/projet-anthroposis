@@ -28,7 +28,7 @@ class ArticleController extends AbstractController
 
             $title = $post['title'];
             $description = $post['description'];
-            $content = str_contains($_POST['content'], '<script>') ? trim(htmlspecialchars($_POST['content'])) : trim($_POST['content']) ;
+            $content = str_contains($_POST['content'], '<script>') ? trim(strip_tags($_POST['content'])) : trim($_POST['content']) ;
             $selectedCategory = (int) $post['selectCategory'];
             $checkToken = $post['checkToken'];
             $image = $_FILES['image'];
@@ -52,7 +52,7 @@ class ArticleController extends AbstractController
 
             if(!FlashBag::hasMessages('error'))
             {
-                $slugifyTitle = slugify($title) . '-' . (time()+ rand(1,1000));
+                $slugifyTitle = slugify($title) . '-' . time()+ rand(1, 1000);
                 $articleModel = new ArticleModel();
                 $articleModel->insert($title, $description, $content, $slugifyTitle, $userId, $selectedCategory, $fileName);
 
@@ -115,7 +115,7 @@ class ArticleController extends AbstractController
 
             $title = $post['title'];
             $description = $post['description'];
-            $content = str_contains($_POST['content'], '<script>') ? trim(htmlspecialchars($_POST['content'])) : trim($_POST['content']) ;
+            $content = str_contains($_POST['content'], '<script>') ? trim(strip_tags($_POST['content'])) : trim($_POST['content']) ;
             $selectedCategory = (int) $post['selectCategory'];
             $checkToken = $post['checkToken'];
             $image = $_FILES['image'];

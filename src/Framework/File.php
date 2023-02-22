@@ -26,7 +26,7 @@ abstract class File
         $fileName = pathinfo($this->file['name']);
         $fileExtension = strtolower($fileName['extension']);
 
-        $uniqueName = md5(uniqid(rand(), true));
+        $uniqueName = time()+ rand(1, 1000);
         $fileName = slugify($fileName['filename']) . '-' . $uniqueName . '.' . $fileExtension;
 
         return $fileName;

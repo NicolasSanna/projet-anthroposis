@@ -1,0 +1,155 @@
+// HEADER
+.Header
+{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    position:fixed;
+    width:100%;
+    background-color: white;
+    padding-top: 10px;
+    margin-top: -80px;
+    z-index: 2;
+
+    &-img
+    {
+        width: 70px;
+    }
+
+    &-h1
+    {
+        margin-top:auto;
+        margin-bottom: 30px;
+        margin-right: 33px;
+
+        &-link
+        {
+            transition-duration:1s;
+            font-family: $baskerville;
+            font-weight: lighter;
+            text-transform : uppercase;
+            font-size: 14px;
+            display:block;
+            text-decoration:none;
+            color:black;
+
+            &:hover
+            {
+                color:$firstColor;
+                transition-duration:1s;
+            }
+        }
+    }
+
+    &-Navbar
+    {
+        &-burger
+        {
+            font-size: 40px;
+            color:$firstColor;
+            cursor:pointer;
+        }
+
+        // MENU
+
+        &-menu
+        {
+            background-color:white;
+            transform:translateX(-200%);
+            position:fixed;
+            margin-top: -10px;
+            width:86%;   
+            height:100%;     
+
+            &-cross
+            {
+                font-size: 40px;
+                color:$firstColor;
+                margin-right:30px;
+                display:block;
+                text-align: right;
+                cursor: pointer;
+                margin-top:10px;
+            }
+
+            &-list
+            {
+                display:flex;
+                flex-direction: column;
+                align-items: center;
+                list-style: none;
+                justify-content: space-between;
+
+                &-item
+                {
+                    margin-top:10px;
+                    margin-bottom:10px;
+                    &-link
+                    {
+                        display:block;
+                        text-decoration:none;
+                        color:black;
+                        transition-duration:1s;
+
+                        &:hover
+                        {
+                            color:$firstColor;
+                            transition-duration:1s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen AND (min-width: 1200px)
+{
+    .Header
+    {
+        align-items: center;
+
+        &-h1
+        {
+            margin-left:5%;
+            margin-right:5%;
+            margin-bottom:25px;
+
+            &-link
+            {
+                font-size: 24px;
+            }
+        }
+
+        &-img
+        {
+            margin-left: 5%;
+        }
+
+        &-Navbar
+        {
+            width:100%;
+
+            &-burger
+            {
+                display:none;
+            }
+
+            &-menu
+            {
+                position:relative;
+                transform:translateX(0%);
+
+                &-list
+                {
+                    flex-direction: row;
+                }
+                
+                &-cross
+                {
+                    display:none;
+                }
+            }
+        }
+    }
+}
