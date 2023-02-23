@@ -39,4 +39,5 @@ export default class MenuManager
             this.menu.classList.remove('inactive');
         }
     }
+    
 }
