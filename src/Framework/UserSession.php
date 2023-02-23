@@ -38,6 +38,7 @@ class UserSession extends AbstractSession
 
         // On appelle la méthode privée token afin de générer le token aléatoire lors de la connexion de l'utilisateur.
         self::token();
+
     }
 
     /**
@@ -208,5 +209,32 @@ class UserSession extends AbstractSession
 
         // On retourne le token.
         return $_SESSION['user']['token'];
+    }
+
+    /**
+     * Création d'une méthode statique de déconnexion au bout d'un laps de temps (une heure).
+     */
+    public static function timeout()
+    {
+        // Si à l'appel de la méthode statique isAuthenticated() il n'y a rien on retourne null.
+        if (!self::isAuthenticated())
+        {
+            return null;
+        }
+        
+        if(!isset($_SESSION['user']['timeout']))
+        {
+            $_SESSION['user']['timeout'] = time();
+        }
+
+        if((time() - $_SESSION['user']['timeout']) > 60 * 60)
+        {
+            UserSession::logout();
+            FlashBag::addFlash('Vous avez été déconnecté', 'error');
+
+            $url = buildUrl('login');
+            header('Location:' . $url);
+            exit;
+        }
     }
 }

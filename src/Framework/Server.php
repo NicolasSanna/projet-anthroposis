@@ -22,6 +22,7 @@ class Server
         {
             $url = buildUrl('403');
             header('Location:' .  $url);
+            exit;
         }
 
         self::$path = self::secureApi();
@@ -35,6 +36,8 @@ class Server
      */
     private static function secureAdmin(): bool
     {
+        UserSession::timeout();
+
         // si le path contient '/admin', et que la personne qui tente d'y accéder n'est pas connectée...
         if (str_contains(self::$path, '/admin') && !UserSession::isAuthenticated())
         {
