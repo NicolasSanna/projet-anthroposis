@@ -234,6 +234,10 @@ table thead th {
   flex-direction: row;
   align-items: center;
 }
+.Form-component-category {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 .Form-component-file {
   display: inline-block;
   position: relative;
@@ -424,7 +428,7 @@ table thead th {
   }
   .Page-categories {
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-wrap: wrap;
   }
   .Page-categories-category-title-link {
@@ -488,6 +492,7 @@ table thead th {
   width: 100%;
   margin-left: 10px;
   margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 .active {

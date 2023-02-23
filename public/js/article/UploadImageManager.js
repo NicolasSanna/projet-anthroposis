@@ -4,7 +4,7 @@ class UploadImageManager
     {
         this.inputImage = document.getElementById('inputImage');
         this.previewImg = document.getElementById('previewImg'); 
-        this.form = document.getElementById('Form');
+        this.form = document.getElementById('FormArticle');
 
         this.validMimes = ['image/png', 'image/jpeg', 'image/jpg', 'image/img']
 

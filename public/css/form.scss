@@ -11,6 +11,12 @@
         flex-direction: row;
         align-items: center;
 
+        &-category
+        {
+            margin-top:10px;
+            margin-bottom:10px;
+        }
+
         &-file
         {
             display: inline-block;
@@ -91,6 +97,8 @@
                 background-color: $firstColor;
                 color: white;
             }
+
+
         }
     }
 
