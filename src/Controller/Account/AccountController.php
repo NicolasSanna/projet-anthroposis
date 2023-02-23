@@ -4,6 +4,7 @@ namespace App\Controller\Account;
 
 use App\Framework\AbstractController;
 use App\Framework\FlashBag;
+use App\Framework\Mailing;
 use App\Framework\Post;
 use App\Framework\UserSession;
 use App\Model\UserModel;
@@ -64,6 +65,12 @@ class AccountController extends AbstractController
                 $result = $userModel->insert($firstname, $lastname, $pseudo, $email, $hashPassword);
 
                 FlashBag::addFlash($result->message, 'query');
+
+                if($result->message === "Vous êtes bien enregistré, vous pouvez vous connecter")
+                {
+                    $mailing = new Mailing($post);
+                    $mailing->sendToAdmin();
+                }
             }
         }
 

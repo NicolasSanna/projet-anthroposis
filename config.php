@@ -23,6 +23,9 @@ define('DB_MS', getenv('DB_MS'));
 define('DB_PORT', getenv('DB_PORT'));
 define('DB_CHARSET', getenv('DB_CHARSET'));
 
+define('EMAIL_FROM', getenv('EMAIL_FROM'));
+define('EMAIL_TO', getenv('EMAIL_TO'));
+
 // Gestion de l'affichage des erreurs côté PHP.
 // En développement :
 error_reporting(-1);
