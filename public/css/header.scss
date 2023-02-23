@@ -43,6 +43,7 @@
 
     &-Navbar
     {
+        
         &-burger
         {
             font-size: 40px;
@@ -58,8 +59,9 @@
             transform:translateX(-200%);
             position:fixed;
             margin-top: -10px;
-            width:86%;   
-            height:100%;     
+            width:87%;   
+            height:100%;
+            // margin-left: 50px; 
 
             &-cross
             {
@@ -130,6 +132,7 @@
         {
             width:100%;
 
+
             &-burger
             {
                 display:none;
@@ -139,6 +142,8 @@
             {
                 position:relative;
                 transform:translateX(0%);
+                margin-left: 0px;
+                width: 92%;
 
                 &-list
                 {
