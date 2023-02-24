@@ -3,7 +3,7 @@
 namespace App\Framework;
 
 use \Exception;
-use stdClass;
+use \stdClass;
 
 class Mailing
 {
