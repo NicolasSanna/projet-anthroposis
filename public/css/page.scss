@@ -5,6 +5,8 @@
         text-align: center;
         margin-top:10px;
         margin-bottom:10px;
+        padding-top:15px;
+        font-family: $raleway;
     }
 
     &-articles
@@ -105,7 +107,7 @@
                     transition-duration:1s;
                     margin-top:5px;
                     margin-bottom:5px;
-                    font-family: $baskerville;
+                    font-family: $raleway;
                     font-weight: lighter;
                     font-size: 20px;
                     line-height: 35px;
@@ -146,6 +148,11 @@
                 margin-left:20px;
                 margin-right:20px;
                 width:400px;
+
+                &-link
+                {
+                    font-size: 24px;
+                }
             }
         }
 

@@ -61,6 +61,7 @@ table thead th {
   padding-top: 10px;
   margin-top: -80px;
   z-index: 2;
+  box-shadow: 0px 5px 5px #ccc;
 }
 .Header-img {
   width: 70px;
@@ -75,7 +76,7 @@ table thead th {
   font-family: "Baskerville";
   font-weight: lighter;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 16px;
   display: block;
   text-decoration: none;
   color: black;
@@ -94,8 +95,9 @@ table thead th {
   transform: translateX(-200%);
   position: fixed;
   margin-top: -10px;
-  width: 87%;
+  width: 88%;
   height: 100%;
+  box-shadow: 5px 0px 5px #ccc;
 }
 .Header-Navbar-menu-cross {
   font-size: 40px;
@@ -154,6 +156,7 @@ table thead th {
     transform: translateX(0%);
     margin-left: 0px;
     width: 92%;
+    box-shadow: 0px 0px 0px #ccc;
   }
   .Header-Navbar-menu-list {
     flex-direction: row;
@@ -330,6 +333,8 @@ table thead th {
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
+  padding-top: 15px;
+  font-family: "Raleway";
 }
 .Page-articles {
   margin-left: 10%;
@@ -403,7 +408,7 @@ table thead th {
   transition-duration: 1s;
   margin-top: 5px;
   margin-bottom: 5px;
-  font-family: "Baskerville";
+  font-family: "Raleway";
   font-weight: lighter;
   font-size: 20px;
   line-height: 35px;
@@ -430,6 +435,9 @@ table thead th {
     margin-left: 20px;
     margin-right: 20px;
     width: 400px;
+  }
+  .Page-articles-article-link {
+    font-size: 24px;
   }
   .Page-categories {
     flex-direction: row;
@@ -516,6 +524,7 @@ table thead th {
 .Admin-title {
   text-align: center;
   margin-bottom: 10px;
+  padding-top: 10px;
 }
 .Admin-boxImg {
   text-align: center;
@@ -581,6 +590,7 @@ table thead th {
   padding-right: 40px;
   padding-top: 20px;
   padding-bottom: 20px;
+  box-shadow: 0px 0px 5px #ccc;
 }
 .Home-component-p {
   font-family: "Raleway";
@@ -597,6 +607,7 @@ table thead th {
   font-family: "Baskerville";
   font-weight: lighter;
   font-size: 20px;
+  padding-top: 15px;
 }
 
 @media screen and (min-width: 1200px) {
@@ -605,6 +616,8 @@ table thead th {
     min-width: 300px;
     max-width: 300px;
     z-index: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
   .MenuAdmin-title {
     display: block;
