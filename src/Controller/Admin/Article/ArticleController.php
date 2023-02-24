@@ -137,9 +137,14 @@ class ArticleController extends AbstractController
                 $fileName = $fileModel->uploadFileImage();
             }
 
+            if(empty($image['name']))
+            {
+                $fileName = $article->image;
+            }
+
             if(!FlashBag::hasMessages('error'))
             {
-                $slugifyTitle = $slugifyTitle = slugify($title) . '-' . (time()+ rand(1,1000));
+                $slugifyTitle = slugify($title) . '-' . (time()+ rand(1, 1000));
                 $articleModel = new ArticleModel();
                 $articleModel->update($title, $description, $content, $slugifyTitle, $userId, $selectedCategory, $article->idArt, $fileName);
 
