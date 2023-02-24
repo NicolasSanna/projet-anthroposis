@@ -6,6 +6,7 @@ use App\Framework\Get;
 use App\Model\UserModel;
 use App\Framework\UserSession;
 use App\Framework\AbstractController;
+use App\Framework\Mailing;
 
 class UserController extends AbstractController
 {
@@ -37,6 +38,11 @@ class UserController extends AbstractController
 
         $userModel = new UserModel();
         $userModel->manageToAuthor($userId);
+
+        $user = $userModel->getOneById($userId);
+
+        $mailing = new Mailing($user);
+        $mailing->sendToNewAuthor();
 
         return $this->redirect('users');
     }

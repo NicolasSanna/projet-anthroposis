@@ -70,6 +70,7 @@ class AccountController extends AbstractController
                 {
                     $mailing = new Mailing($post);
                     $mailing->sendToAdmin();
+                    $mailing->sendToNewUser();
                 }
             }
         }

@@ -38,7 +38,7 @@ class UserModel extends AbstractModel
 
     public function findOneByEmail (string $email): mixed
     {
-        $sql = 'CALL SP_UserSelect(:email)';
+        $sql = 'CALL SP_UserByEmailSelect(:email)';
 
         $result = $this->database->getOneResult($sql, [
             'email' => $email
@@ -93,5 +93,16 @@ class UserModel extends AbstractModel
             'roleId' => self::ROLE_NEW_USER_ID,
             'roleLabel' => self::ROLE_NEW_USER_STRING
         ]);
+    }
+
+    public function getOneById(int $userId)
+    {
+        $sql = 'CALL SP_UserByIdSelect(:userId)';
+
+        $result = $this->database->getOneResult($sql, [
+            'userId' => $userId
+        ]);
+
+        return $result;
     }
 }
