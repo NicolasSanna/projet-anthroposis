@@ -1,34 +1,44 @@
 <div class="Admin">
     <h2 class="Admin-title">Utilisateurs</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Nom</th>
-                <th>Prénom</th>
-                <th>Pseudo</th>
-                <th>E-mail</th>
-                <th>Inscription</th>
-                <th>Rôle</th>
-                <th>Articles</th>
-                <th colspan="2">Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($users as $user):?>
+    
+    <?php if (!empty($users)):?>
 
+        <table>
+            <thead>
                 <tr>
-                    <td><?=$user->lastname;?></td>
-                    <td><?=$user->firstname;?></td>
-                    <td><?=$user->pseudo;?></td>
-                    <td><?=$user->email;?></td>
-                    <td><?=$user->date_fr;?></td>
-                    <td><?=$user->role_label;?></td>
-                    <td><?=$user->number_articles;?></td>
-                    <td><a class="Admin-modify" href="<?=buildUrl('update-user-to-author', ['id' => $user->idUser, 'token' => $token]);?>">Rôle Auteur</a></td>
-                    <td><a class="Admin-modify" href="<?=buildUrl('update-user-to-new-user', ['id' => $user->idUser, 'token' => $token]);?>">Rôle inscrit</a></td>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Pseudo</th>
+                    <th>E-mail</th>
+                    <th>Inscription</th>
+                    <th>Rôle</th>
+                    <th>Articles</th>
+                    <th colspan="2">Actions</th>
                 </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($users as $user):?>
 
-            <?php endforeach;?>
-        </tbody>
-    </table>
+                    <tr>
+                        <td><?=$user->lastname;?></td>
+                        <td><?=$user->firstname;?></td>
+                        <td><?=$user->pseudo;?></td>
+                        <td><?=$user->email;?></td>
+                        <td><?=$user->date_fr;?></td>
+                        <td><?=$user->role_label;?></td>
+                        <td><?=$user->number_articles;?></td>
+                        <td><a class="Admin-modify" href="<?=buildUrl('update-user-to-author', ['id' => $user->idUser, 'token' => $token]);?>">Rôle Auteur</a></td>
+                        <td><a class="Admin-modify" href="<?=buildUrl('update-user-to-new-user', ['id' => $user->idUser, 'token' => $token]);?>">Rôle inscrit</a></td>
+                    </tr>
+
+                <?php endforeach;?>
+            </tbody>
+        </table>
+
+    <?php else :?>
+
+        <p>Il n'y a pas encore d'utilisateurs inscrits sur le site.</p>
+
+    <?php endif;?>
+
 </div>

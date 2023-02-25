@@ -1,30 +1,40 @@
 <div class="Admin">
     <h2 class="Admin-title">Mes articles</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Titre</th>
-                <th>Description</th>
-                <th>Date de création</th>
-                <th>Catégorie</th>
-                <th>Statut</th>
-                <th colspan="2">Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($articles as $article):?>
-                <tr id="article-<?=$article->slug;?>">
-                    <td><?=$article->title;?></td>
-                    <td><?=$article->description;?></td>
-                    <td><?=$article->date_fr;?></td>
-                    <td><?=$article->category_name;?></td>
-                    <td><?=$article->status_label;?></td>
-                    <td><a class="Admin-modify" href="<?=buildUrl('update-article', ['article' => $article->slug]);?>">Modifier</a></td>
-                    <td><a class="Admin-delete" href="<?=buildUrl('delete-article', ['article' => $article->slug, 'token' => $token]);?>">Supprimer</a></td>
+
+    <?php if(!empty($articles)):?>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Titre</th>
+                    <th>Description</th>
+                    <th>Date de création</th>
+                    <th>Catégorie</th>
+                    <th>Statut</th>
+                    <th colspan="2">Actions</th>
                 </tr>
-            <?php endforeach;?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <?php foreach ($articles as $article):?>
+                    <tr id="article-<?=$article->slug;?>">
+                        <td><?=$article->title;?></td>
+                        <td><?=$article->description;?></td>
+                        <td><?=$article->date_fr;?></td>
+                        <td><?=$article->category_name;?></td>
+                        <td><?=$article->status_label;?></td>
+                        <td><a class="Admin-modify" href="<?=buildUrl('update-article', ['article' => $article->slug]);?>">Modifier</a></td>
+                        <td><a class="Admin-delete" href="<?=buildUrl('delete-article', ['article' => $article->slug, 'token' => $token]);?>">Supprimer</a></td>
+                    </tr>
+                <?php endforeach;?>
+            </tbody>
+        </table>
+
+    <?php else :?>
+
+        <p>Vous n'avez encore écrit aucun article.</p>
+
+    <?php endif;?>
+
 </div>
 
 <script src="<?=asset('js/article/DeleteArticleManager.js');?>"></script>
