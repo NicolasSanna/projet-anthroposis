@@ -6,6 +6,7 @@ use App\Framework\AbstractController;
 use App\Framework\FlashBag;
 use App\Framework\Get;
 use App\Framework\Image;
+use App\Framework\Mailing;
 use App\Framework\Post;
 use App\Framework\UserSession;
 use App\Model\ArticleModel;
@@ -55,6 +56,9 @@ class ArticleController extends AbstractController
                 $slugifyTitle = slugify($title) . '-' . time()+ rand(1, 1000);
                 $articleModel = new ArticleModel();
                 $articleModel->insert($title, $description, $content, $slugifyTitle, $userId, $selectedCategory, $fileName);
+
+                $mailing = new Mailing();
+                $mailing->sendToAdministratorApprobeArticle();
 
                 FlashBag::addFlash('Votre article a bien été ajouté, il sera validé prochainement');
                 return $this->redirect('dashboard');
@@ -148,6 +152,9 @@ class ArticleController extends AbstractController
                 $articleModel = new ArticleModel();
                 $articleModel->update($title, $description, $content, $slugifyTitle, $userId, $selectedCategory, $article->idArt, $fileName);
 
+                $mailing = new Mailing();
+                $mailing->sendToAdministratorApprobeArticle();
+
                 FlashBag::addFlash('Votre article a bien été modifié, il sera validé prochainement');
                 return $this->redirect('dashboard');
             }
@@ -221,6 +228,9 @@ class ArticleController extends AbstractController
         }
 
         $articleModel->approbe($articleSlug);
+
+        $mailing = new Mailing($article);
+        $mailing->sendToAuthorApprobeArticle();
         
         return $this->redirect('manage-articles-users');
     }
