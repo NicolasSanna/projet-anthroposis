@@ -412,6 +412,7 @@ table thead th {
   font-weight: lighter;
   font-size: 20px;
   line-height: 35px;
+  text-align: center;
 }
 .Page-categories-category-title-link:hover {
   color: #917237;
@@ -453,6 +454,10 @@ table thead th {
   margin: 0;
   padding: 0;
   font-family: "Raleway";
+}
+
+.aside {
+  padding-top: 10px;
 }
 
 .main {
@@ -506,6 +511,7 @@ table thead th {
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 10px;
+  padding-top: 10px;
 }
 
 .active {
