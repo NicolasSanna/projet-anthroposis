@@ -14,7 +14,7 @@ class DeleteArticleManager
     {
         e.preventDefault();
 
-        const confirmation = window.confirm('Êtes-vous sûr de vouloir supprimer cet article ? ');
+        const confirmation = confirm('Êtes-vous sûr de vouloir supprimer cet article ? ');
 
         if (confirmation === true)
         {

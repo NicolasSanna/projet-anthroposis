@@ -177,6 +177,14 @@ $routes = [
         'method' => 'getAll'
     ],
 
+    // INFORMATIONS PERSONNELLES
+
+    'personal-informations' => [
+        'path' => '/admin/informations-personnelles',
+        'controller' => 'Admin\\User\\UserController',
+        'method' => 'personalInformations'
+    ],
+
     // PAGE 404
 
     '404' => [

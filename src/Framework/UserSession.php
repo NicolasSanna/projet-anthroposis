@@ -102,6 +102,20 @@ class UserSession extends AbstractSession
         return $_SESSION['user']['firstname'];
     }
 
+        /**
+     * On créé une méthode statique getPseudo()
+     */
+    public static function getPseudo(): null|string
+    {
+        // Si à l'appel de la méthode statique isAuthenticated() il n'y a rien on retourne null.
+        if (!self::isAuthenticated())
+        {
+            return null;
+        }
+        // Sinon on retourne l'identifiant pseudo venant de la clé user de la superlogable $_SESSION.
+        return $_SESSION['user']['pseudo'];
+    }
+
     /**
      * On créé une méthode statique getFirstname()
      */

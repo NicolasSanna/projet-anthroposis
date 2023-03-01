@@ -105,4 +105,19 @@ class UserModel extends AbstractModel
 
         return $result;
     }
+
+    public function updatePersonalInfos(int $userId, string $lastname, string $firstname, string $pseudo, string $email): mixed
+    {
+        $sql = 'CALL SP_UserUpdate(:userId, :lastname, :firstname, :pseudo, :email)';
+
+        $result = $this->database->getOneResult($sql, [
+            'userId' => $userId,
+            'lastname' => $lastname,
+            'firstname' => $firstname,
+            'pseudo' => $pseudo,
+            'email' => $email
+        ]);
+
+        return $result;
+    }
 }

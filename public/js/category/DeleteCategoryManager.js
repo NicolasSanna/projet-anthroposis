@@ -20,7 +20,7 @@ class DeleteCategoryManager
     {
         e.preventDefault();
         
-        const confirmation = window.confirm('Êtes-vous sûr de vouloir supprimer cette catégorie et ses articles associés ? ');
+        const confirmation = confirm('Êtes-vous sûr de vouloir supprimer cette catégorie et ses articles associés ? ');
 
         if (confirmation === true)
         {
@@ -48,7 +48,7 @@ class DeleteCategoryManager
     {
         e.preventDefault();
         
-        const confirmation = window.confirm('Êtes-vous sûr de vouloir supprimer cette catégorie en conservant ses articles associés ? ');
+        const confirmation = confirm('Êtes-vous sûr de vouloir supprimer cette catégorie en conservant ses articles associés ? ');
 
         if (confirmation === true)
         {
