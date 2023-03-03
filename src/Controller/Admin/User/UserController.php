@@ -12,7 +12,7 @@ use App\Framework\Post;
 
 class UserController extends AbstractController
 {
-    public function manage(): string
+    public function manage()
     {
         $pageTitle = 'Membres';
         $token = UserSession::token();
@@ -27,7 +27,7 @@ class UserController extends AbstractController
         ]);
     }
 
-    public function updateToAuthor(): mixed
+    public function updateToAuthor()
     {
         $userId = (int) Get::key('id');
         $getToken = Get::key('token');
@@ -49,7 +49,7 @@ class UserController extends AbstractController
         return $this->redirect('users');
     }
 
-    public function updateToNewUser(): mixed
+    public function updateToNewUser()
     {
         $userId = (int) Get::key('id');
         $getToken = Get::key('token');

@@ -9,7 +9,7 @@ use App\Model\ArticleModel;
 
 class ArticleController extends AbstractController
 {
-    public function delete(): string
+    public function delete()
     {
         $articleSlug = Get::key('article');
         $getToken = Get::key('token');

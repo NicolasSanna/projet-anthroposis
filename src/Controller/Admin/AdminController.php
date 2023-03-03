@@ -6,7 +6,7 @@ use App\Framework\AbstractController;
 
 class AdminController extends AbstractController
 {
-    public function dashboard(): string
+    public function dashboard()
     {
         $pageTitle = 'Administration';
 

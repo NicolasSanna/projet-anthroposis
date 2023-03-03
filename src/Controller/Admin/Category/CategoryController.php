@@ -66,7 +66,7 @@ class CategoryController extends AbstractController
         ]);
     }
 
-    public function update(): string
+    public function update()
     {
         
         $token = UserSession::token();

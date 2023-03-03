@@ -11,7 +11,7 @@ use App\Model\UserModel;
 
 class AccountController extends AbstractController
 {
-    public function signup(): string
+    public function signup()
     {
         $pageTitle = 'Inscription';
         $isLogged = UserSession::isAuthenticated();
@@ -85,7 +85,7 @@ class AccountController extends AbstractController
         ]);
     }
 
-    public function login(): string
+    public function login()
     {
         $pageTitle = 'Connexion';
 
@@ -140,7 +140,7 @@ class AccountController extends AbstractController
         ]);
     }
 
-    public function logout(): mixed
+    public function logout()
     {
         UserSession::logout();
 

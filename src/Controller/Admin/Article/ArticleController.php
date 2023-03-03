@@ -14,7 +14,7 @@ use App\Model\CategoryModel;
 
 class ArticleController extends AbstractController
 {
-    public function new(): string
+    public function new()
     {
         $pageTitle = 'Nouvel article';
         $categoryModel = new CategoryModel();
@@ -93,7 +93,7 @@ class ArticleController extends AbstractController
         ]);
     }
 
-    public function update(): string
+    public function update()
     {
         $pageTitle = 'Modifier mon article';
 
@@ -185,7 +185,7 @@ class ArticleController extends AbstractController
         ]);
     }
 
-    public function check(): string
+    public function check()
     {
         $pageTitle = 'Gérer l\'article';
         
@@ -207,7 +207,7 @@ class ArticleController extends AbstractController
         ]);
     }
 
-    public function approbe(): mixed
+    public function approbe()
     {
         $articleSlug = Get::key('article');
 

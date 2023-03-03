@@ -7,7 +7,7 @@ use App\Model\CategoryModel;
 
 class CategoryController extends AbstractController
 {
-    public function getAll(): string
+    public function getAll()
     {
         $pageTitle = 'Catégories';
 

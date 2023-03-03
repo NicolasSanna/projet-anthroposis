@@ -35,7 +35,7 @@ class ArticleController extends AbstractController
         ]);
     }
 
-    public function getOne(): string
+    public function getOne()
     {
         $articleSlug = Get::key('article');
 
@@ -55,7 +55,7 @@ class ArticleController extends AbstractController
         ]);
     }
 
-    public function getAll(): string
+    public function getAll()
     {
         $pageTitle = 'Tous les articles';
 
@@ -68,7 +68,7 @@ class ArticleController extends AbstractController
         ]);
     }
 
-    public function getAllByCategory(): string
+    public function getAllByCategory()
     {
         $categorySlug = Get::key('categorie');
 

@@ -6,7 +6,7 @@ use App\Framework\AbstractController;
 
 class HomeController extends AbstractController 
 {
-    public function index(): string
+    public function index()
     {
         $pageTitle = 'Bienvenue sur Anthroposis';
 
@@ -15,7 +15,7 @@ class HomeController extends AbstractController
         ]);
     }
 
-    public function notFound(): string
+    public function notFound()
     {
         $pageTitle = 'Page introuvable';
 
@@ -24,7 +24,7 @@ class HomeController extends AbstractController
         ]);
     }
 
-    public function forbidden(): string
+    public function forbidden()
     {
         $pageTitle = 'Accès refusé';
 

@@ -9,7 +9,7 @@ use App\Framework\AbstractController;
 
 class CategoryController extends AbstractController
 {
-    public function deleteWithArticles(): string
+    public function deleteWithArticles()
     {
         $categoryId = Get::key('id');
         $getToken = Get::key('token');
@@ -26,7 +26,7 @@ class CategoryController extends AbstractController
         return json_encode($categoryId);
     }
 
-    public function deleteWithoutArticles(): string
+    public function deleteWithoutArticles()
     {
         $categoryId = Get::key('id');
         $getToken = Get::key('token');
