@@ -14,10 +14,6 @@
     font-family: $raleway;
 }
 
-.aside
-{
-    padding-top:10px;
-}
 .main
 {
     margin-top: 80px;
@@ -221,16 +217,11 @@
     
     &-title
     {
-        font-family: $baskerville;
-        font-weight: lighter;
+        font-family: $raleway;
         font-size: 20px;
-        padding-top:15px;
+        padding-top:30px;
     }
 }
-
-
-
-
 
 @media screen AND (min-width: 1200px)
 {

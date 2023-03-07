@@ -456,10 +456,6 @@ table thead th {
   font-family: "Raleway";
 }
 
-.aside {
-  padding-top: 10px;
-}
-
 .main {
   margin-top: 80px;
 }
@@ -610,10 +606,9 @@ table thead th {
   align-items: center;
 }
 .Account-title {
-  font-family: "Baskerville";
-  font-weight: lighter;
+  font-family: "Raleway";
   font-size: 20px;
-  padding-top: 15px;
+  padding-top: 30px;
 }
 
 @media screen and (min-width: 1200px) {
