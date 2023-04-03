@@ -72,7 +72,7 @@ class Server
     /**
      * Méthode privée afin de vérifier que le path ne contient pas /api qui correspond à des routes asynchrones du JavaScript vers le PHP et renvoie des informations.
      */
-    private static function secureApi(): string
+    private static function secureApi()
     {
         // Si le path contient /api, et que la clé de la superglobale $_SERVER['HTTP_X_REQUESTED_WITH'] n'est pas vide et contient en minuscules xmlhttprequest ...
         if(str_contains(self::$path, '/api') && !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest')

@@ -21,7 +21,6 @@ use App\Framework\Server;
 use App\Framework\Application as App;
 
 // // On appelle la fonction méthode path() pour récupérer le path de la requête HTTP courante.
-// $server = new Server();
 $path = Server::path();
 
 // Appel du Router pour récupérer le contrôleur à appeler (nom de la classe + nom de la méthode)
